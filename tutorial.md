@@ -33,10 +33,10 @@ Notice that the signal around the blip is completely silent, where in the first 
 
 There are two minor settings I'll mention before the advanced ones:
 
-- The noise gate falloff is related to Floor. By default it's 0, which has no effect. By raising it, you cause sound below the floor to be muted even more. Higher values cause more muting. This is called a ["noise gate"](http://en.wikipedia.org/wiki/Noise_gate) effect, or sometimes simply a "gate". For instance, if you have a track with a guitar riff in it, with portions of silence, the noise gate can mute the noise in the portions where the guitar is silent, to reduce the noise of the overall mix. This also works well for phone call recordings in podcasts. I ought to have another diagram here, but sorry. That link should explain it. (This is not a sophisticated noise gate. It has no attack, hold, or release&#8212;no internal state. It's really just an afterthought.)
+- The noise gate falloff is related to Floor. By default it's 0, which has no effect. By raising it, you cause sound below the floor to be muted even more. Higher values cause more muting. This is called a ["noise gate"](http://en.wikipedia.org/wiki/Noise_gate) effect, or sometimes simply a "gate". For instance, if you have a track with a guitar riff in it, with portions of silence, the noise gate can mute the noise in the portions where the guitar is silent, to reduce the noise of the overall mix. This also works well for phone call recordings in podcasts. I ought to have another diagram here, but sorry. That link should explain it. (This is not a sophisticated noise gate. It has no attack, hold, or release—no internal state. It's really just an afterthought.)
 - Maximum amplitude is basically the same as the Amplify effect. It's primarily there to prevent minor clipping from rounding errors, but if you want to do negative compression (with a ratio > 1, i.e. making the soft parts louder than the loud parts) then you need to reduce this.
 
-Instead of hardness, you can actually modify four parameters that give you finer control. In the rest of the tutorial I'll explain these. First, download the plugin file with the advanced parameters activated [here](../../../projects/compressor/compress-adv.ny). (You can activate them yourself by editing the file and following the instructions.)
+Instead of hardness, you can actually modify four parameters that give you finer control. In the rest of the tutorial I'll explain these. First, download the plugin file with the advanced parameters activated [here](compress-advanced.ny). (You can activate them yourself by editing the file and following the instructions.)
 
 The advanced parameters are the Attack and Release Speed, and the Attack and Release Exponent. The hardness parameter actually just adjusts the speed values (higher hardness means smaller speed). The exponent values can usually just stay where they are. To get a more in depth look, let's look at some more diagrams.
 
@@ -56,16 +56,10 @@ In this diagram, both the exponent parameters are set to 2. (The floor has also 
 
 You can see that the bottom is a lot flatter, and when it starts rising it rises more quickly. The speed options, on the other hand, don't change what kind of curve it is, they only change how wide the curves are. If you want your exponent 2 curve to rise/fall faster, but still keep the same basic shape, you lower the speed. The speed parameters horizontally stretch or compress the curves*. I put the units for speed as milliseconds, which really isn't very accurate. It's an attempt to very roughly equal the usual values for traditional compressors. Here's an exponent 2 curve (release and attack) with a speed of 300 ms (release and attack), next to one with a speed of 600 ms.
 
-<small>* Actually, horizontal and vertical stretching on x<sup>n</sup> curves have the same effect, but it's easier to visualize it as horizontal.</small>
+*Actually, horizontal and vertical stretching on x<sup>n</sup> curves have the same effect, but it's easier to visualize it as horizontal.
 
-<table>
-<tbody>
-<tr>
-<td><img src="images/cmp8.png" /></td>
-<td><img src="images/cmp11.png" /></td>
-</tr>
-</tbody>
-</table>
+<img src="images/cmp8.png" /> <img src="images/cmp11.png" />
+
 You can see that the 600 ms one on the right can't get the curve down into the gap as much since the curve is wider.
 
 It's important to note that raising the exponent makes the curve narrower, so if you like the attack speed but want to change the exponent, you need to adjust the attack speed in the same direction as the exponent. For example, here's a curve with a release exponent of 2, an attack exponent of 4, and speeds of 450 ms.
