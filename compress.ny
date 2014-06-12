@@ -1,25 +1,35 @@
 ;nyquist plug-in
 ;version 1
 ;type process
+;categories "http://lv2plug.in/ns/lv2core#CompressorPlugin"
 ;name "Compress &dynamics..."
 ;action "Compressing..."
-;info "Does dynamic (volume) compression with lookahead.\n'Compress ratio' is how much to louden the soft parts.\n  You can soften the soft parts with values < 0, and invert\n  loudness with values > 1 (lower max amp when you do).\n'Attack' is how fast the volume drops to anticipate a loud section.\n'Release' is how fast it rises after a loud section.\nHigher 'width' values give slower changes in volume.\n'Exponent' determines the shape of the attack and release curves.\n  Higher values flatten out the low point of the curve and\n  increase the slope farther out on it.\nRaise 'floor' to make quiet parts stay quiet.\nRaise 'noise gate falloff' to make quiet parts (beneath 'floor') disappear.\nLower 'maximum amplitude' if you experience clipping."
+;info "Does dynamic (volume) compression with lookahead.\n'Compress ratio' is how much compression to apply. Raise when soft parts\n  are too soft, and lower to keep some dynamic range. You can soften the\n  soft parts instead of increasing them with values < 0, and invert\n  loudness with values > 1 (lower max amp when you do).\n'Hardness' is how agressively to compress. Raise when parts are still\n  hard to hear (even with a high compress ratio). Lower when the result\n  sounds distorted.\nRaise 'floor' to make quiet parts stay quiet.\nRaise 'noise gate falloff' to make quiet parts (beneath 'floor') disappear.\nLower 'maximum amplitude' if you experience clipping."
 ;control compress-ratio "Compress ratio" real "" .5 -.5 1.25
-;control right-width-s "Attack width" real "~s" .34 .1 10
-;control right-exponent "Attack exponent" real "" 4 1 6
-;control left-width-s "Release width" real "~s" .51 .1 10
-;control left-exponent "Release exponent" real "" 2 1 6
+
+;; TO ENABLE ADVANCED SETTINGS: delete one semicolon from the beginning of the next two lines, then add one to following four.
+
+;;control left-width-s "Release speed" real "~ms" 510 1 5000
+;;control right-width-s "Attack speed" real "~ms" 340 1 5000
+
+;control hardness "Compression hardness" real "" .5 .1 1
+(setf hardness (* (- 1.1 hardness) 3))
+(setf left-width-s (* hardness hardness 510))
+(setf right-width-s (* hardness hardness 340))
+
 ;control floor "Floor" real "dB" -32 -96 0
 ;control noise-factor "Noise gate falloff" real "factor" 0 -2 10
-;control scale-max "Maximum amplitude" real "linear" .95 .0 1.0
+;control scale-max "Maximum amplitude" real "linear" .99 .0 1.0
 
-; umm, this isn't ready for prime-time
-; control use-percep "Use perceptual model" int "yes/no" 0 0 1
-(setf use-percep 0)
+;; TO ENABLE ADVANCED SETTINGS: delete one semicolon from the beginning of the next two lines, then add one to following two.
 
-(setf *gc-flag* nil)
+;;control left-exponent "Release exponent" real "" 2 1 6
+;;control right-exponent "Attack exponent" real "" 4 1 6
 
-;;Version 1.2.1
+(setf left-exponent 2)
+(setf right-exponent 4)
+
+;;Version 1.2.6
 
 ;;Authored by Chris Capel (http://pdf23ds.net)
 ;;All rights reserved
@@ -30,9 +40,8 @@
 ;;of paraboloids (explained below). The closest-fitting envelope possible is
 ;;found for paraboloids constructed using the parameters, such no two points
 ;;have a connecting paraboloid that passes above an intermediate point on the
-;;envelope. points on the envelope and passes above the intermediate points,
-;;the intermediate points are not included. The envelope is inverted and
-;;multiplied against the source signal to apply the appropriate gain.
+;;envelope. The envelope is inverted and multiplied against the source signal
+;;to apply the appropriate gain.
 
 ;;The motivation for using paraboloids is that I was unhappy with the results
 ;;using lines (used in a previous version of this plugin). It would not
@@ -41,6 +50,18 @@
 ;;(with the default parameters) is that the envelope will "hover over"/hug the
 ;;low points of the input signal, while applying an accelerating amount of
 ;;gain (especially on attacks, but also on release) to meet peaks.
+
+;convert to seconds
+(setf right-width-s (/ right-width-s 1000))
+(setf left-width-s (/ left-width-s 1000))
+
+; umm, this isn't ready for prime-time
+; control use-percep "Use perceptual model" int "yes/no" 0 0 1
+(setf use-percep 0)
+
+(setf *window-size* 1500)
+
+(setf *gc-flag* nil)
 
 ;;Compressing based on perceived loudness--perceptual model
 
@@ -115,22 +136,28 @@
 ;; Work with sound arrays
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(setf s-length (/ len *window-size*))
+
 (defun my-snd-fetch-array (snds size)
-  (if (arrayp snds)
-      (let (buffers)
-        (dotimes (x (length snds))
-          (push (snd-fetch-array (aref snds x) size size)
-                buffers))
-        (dotimes (i (length (first buffers)))
-          (setf (aref (first buffers) i)
-                (apply #'max (mapcar (lambda (x)
-                                       (linear-to-db (abs (aref x i))))
-                                     buffers))))
-        (first buffers))
-      (let ((val (snd-fetch-array snds size size)))
-        (dotimes (i (length val))
-          (setf (aref val i) (linear-to-db (abs (aref val i)))))
-        val)))
+  (if (<= s-length 0)
+      nil
+      (if (arrayp snds)
+          (let (buffers)
+            (dotimes (x (length snds))
+              (push (snd-fetch-array (aref snds x) size size)
+                    buffers))
+            (setf s-length (- s-length size))
+            (dotimes (i (length (first buffers)))
+              (setf (aref (first buffers) i)
+                    (apply #'max (mapcar (lambda (x)
+                                           (linear-to-db (abs (aref x i))))
+                                         buffers))))
+            (first buffers))
+          (let ((val (snd-fetch-array snds size size)))
+            (setf s-length (- s-length size))
+            (dotimes (i (length val))
+              (setf (aref val i) (linear-to-db (abs (aref val i)))))
+            val))))
 
 (defun my-snd-srate (snds)
   (if (arrayp snds)
@@ -143,7 +170,7 @@
 
 ;; A paraboloid is an equation of the form
 ;; f(x) =
-;; when x < 0: -(x^n1)
+;; when x < 0: -abs(x^n1)
 ;; when x >= 0: x^n2
 
 (defun make-curve (max power coeff)
@@ -190,20 +217,20 @@
     (when (<= x 0)
       (error "x is too small"))
     (when (>= x (length para)) (return nil))
-  ;;ok, now real code
-  (let* ((left (< y 0))
-         ;;first get in the general area with integers
-         (res (binary-search-int y x left))
-         (i (if (or (= res 0) (= res (1- (length para))))
-                res
-                ;;then if we need to get closer to make up for poor precision
-                (binary-search-float res y x left)))
-         (yoff (- y1 (interp i)))
-         (i (- i x1)))
-    (lambda (x)
-      ;(when (>= (+ x i) (length para))
-      ;  (break "detected array out of bounds"))
-      (+ (interp (+ x i)) yOff)))))
+    ;;ok, now real code
+    (let* ((left (< y 0))
+           ;;first get in the general area with integers
+           (res (binary-search-int y x left))
+           (i (if (or (= res 0) (= res (1- (length para))))
+                  res
+                  ;;then if we need to get closer to make up for poor precision
+                  (binary-search-float res y x left)))
+           (yOff (- y1 (interp i)))
+           (i (- i x1)))
+      (lambda (x)
+        ;(when (>= (+ x i) (length para))
+        ;  (break "detected array out of bounds"))
+        (+ (interp (+ x i)) yOff)))))
 
 (defun binary-search-int (y x left)
   "do an integer binary search to find the best matching part of para for the
@@ -273,6 +300,8 @@
         nil ;; list of buffer arrays
         ))
 
+;(setf temp 3)
+
 (defun get-buffer-sample (buf samp-num)
   (let ((pos (first buf))
         (sound (second buf))
@@ -282,12 +311,19 @@
       (while (>= buffer-num (length bufs))
         (setf (nth 3 buf)
               (nconc bufs (list (my-snd-fetch-array sound size))))
+              ;(if (>= temp 0) (progn
+              ;  (decf temp)
+              ;  (nconc bufs (list (let ((a (make-array size)))
+              ;                      (dotimes (i size)
+              ;                        (setf (aref a i) 0.0))
+              ;                      a))))
+              ;  bufs))
         (setf bufs (fourth buf)))
       (let* ((buf-vec (nth buffer-num bufs))
-             (sample (aref buf-vec (rem (- samp-num pos) size))))
-        (if (and (> samp-num 100) (< sample -1000))
-            nil
-            (max sample -1000))))))
+             (idx (and buf-vec (rem (- samp-num pos) size)))
+             (sample (and buf-vec (< idx (length buf-vec))
+                          (aref buf-vec idx))))
+        (and sample (max sample -1000))))))
 
 (defun set-buffer-pos (buf pos)
   "tell the buffer what position you're currently at, promising you won't need
@@ -307,13 +343,14 @@
 ;; constructor
 (send compression-env :answer :isnew '(snd)
   '((progn
-     (setf input-buf (make-snd-buffer snd 10000)
+     (setf input-buf (make-snd-buffer snd 1000)
            ;; this is a function returning offsetted points of a paraboloid
            cur-para nil
            ;; the sample number where we need to get a new cur-para
            cur-para-end 0
            ;; the current sample number
-           i 0))
+           i 0
+           first-samp t))
      ;; set up some common data used in the cur-para function
      (init-para)))
 
@@ -363,21 +400,28 @@
           ;;iY now has the value it needs, but the paraboloid
           ;;could overlap some peaks, so we need to recalculate those now
           (go again))))))
-  (incf i)
   (when (= 0 (rem i 1000)) (set-buffer-pos input-buf i))
-  (if (null (samp i))
-      nil
-      ;;s-min seems to behave strangely, so we do the floor thing here instead
-      ;(max floor (funcall cur-para i))
-      ;;noise gate
-      (let ((v (funcall cur-para i)))
-        (if (> v floor)
-            v
-            ;((v - floor) * -1 * fac) + floor
-            (+ (* (- v floor) -1 noise-factor)
-               floor)
-            ))
-      ))))
+  (let* ((v (funcall cur-para i))
+         ;;s-min seems to behave strangely, so we do the floor/noisegate thing
+         ;;here instead
+         (res (if (> v floor)
+                  v
+                  (+ (* (- v floor) -1 noise-factor)
+                     floor))))
+    ;;put out an extra sample at the beginning.
+    ;;otherwise it doesn't line up for some weird reason. who knows?
+    (if first-samp
+      (progn (setf first-samp nil) 
+        res)
+      (progn
+        (incf i)
+        ;;put an extra sample at the end, too.
+        ;;otherwise the volume drops off at the very end
+        ;;because nyquist adds an implicit last sample with value 0
+        (if (and (null (samp i)) (null (samp (1- i))))
+          ;(progn (close debug) nil)
+          nil
+          res)))))))
 
 (defun get-compression-env (snd)
   (let ((sound (if (arrayp snd) (aref snd 1) snd)))
@@ -387,7 +431,7 @@
 (defun get-my-sound (sound)
   "take care of averaging and multichannel bookkeeping"
   (let ((sound (if (= use-percep 1) (get-percep-adjusted-sound sound) sound))
-        (avg-fun (lambda (snd) (snd-avg snd 3000 1500 op-peak))))
+        (avg-fun (lambda (snd) (snd-avg snd (* 2 *window-size*) *window-size* op-peak))))
     (if (arrayp sound)
         (let ((avg-channels (make-array (length sound))))
           (dotimes (i (length sound))
@@ -397,26 +441,26 @@
         (funcall avg-fun sound))))
 
 (defun do-compression ()
-  (if (and (arrayp s)
-           (do ((i 1 (1+ i))
-                (srate (snd-srate (aref s 0))))
-               ((>= i (length s)) (null srate))
-             (when (and srate (/= srate (snd-srate (aref s i))))
-               (setf srate nil))))
-     "This plugin doesn't support processing channels with different sample rates. Sorry."
-    (let* ((ret (get-my-sound s))
-           (srate (my-snd-srate ret)))
-      (setf right-width (* right-width-s srate))
-      (setf  left-width (*  left-width-s srate))
+  (let* ((ret (get-my-sound s))
+         (srate (my-snd-srate ret)))
+    (setf right-width (* right-width-s srate))
+    (setf  left-width (*  left-width-s srate))
 
-      ;;get-compression-env applies linear-to-db(max(abs(s))) to its input
-      (setf ret (get-compression-env ret))
-      (setf ret (mult compress-ratio ret))
-      (setf ret (db-to-linear ret))
-      (setf ret (recip ret))
-      (setf ret (mult scale-max ret))
-      ;(snd-resample ret 44100)
-      (mult s ret)
-      )))
+    ;;get-compression-env applies linear-to-db(max(abs(s))) to its input
+    (setf ret (get-compression-env ret))
+    (setf ret (mult compress-ratio ret))
+    (setf ret (db-to-linear ret))
+    (setf ret (recip ret))
+    (setf ret (mult scale-max ret))
+    ;(snd-length ret 10000000000)
+    (mult s ret)
+    ))
 
+(defun prin (&rest args)
+  ;(dolist (x args)
+  ;  (princ x debug))
+  ;(terpri debug)
+  )
+
+;(setf debug (open "C:\\debug.txt" :direction :output))
 (do-compression)
