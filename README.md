@@ -25,7 +25,7 @@ The plugin version has advanced options (including separate attack/release speed
 For the most part, the default settings will work just fine. The first setting is the main one, letting you choose how heavy or light to compress.
 ### Tutorial
 
-[Here.](options-explained/index.html)
+[Here.](tutorial.md)
 
 ### Changes in 1.2.6
 
