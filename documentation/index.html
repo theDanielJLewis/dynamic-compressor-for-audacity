@@ -1,0 +1,2792 @@
+<html>
+
+
+<!-- Mirrored from pdf23ds.net/software/dynamic-compressor/ by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 13 Jun 2011 01:06:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Metablog   &raquo; Chris&#8217;s dynamic compressor</title>
+
+<meta name="generator" content="WordPress 2.7.1" /> <!-- leave this for stats -->
+
+<link rel="stylesheet" href="../../wp-content/themes/metablog/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../feed/index.html" />
+<link rel="alternate" type="text/xml" title="RSS .92" href="../../feed/rss/index.html" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="../../feed/atom/index.html" />
+<link rel="pingback" href="../../xmlrpc.html" />
+
+	<link rel='archives' title='April 2011' href='../../2011/04/index.html' />
+	<link rel='archives' title='March 2011' href='../../2011/03/index.html' />
+	<link rel='archives' title='January 2011' href='../../2011/01/index.html' />
+	<link rel='archives' title='December 2010' href='../../2010/12/index.html' />
+	<link rel='archives' title='October 2010' href='../../2010/10/index.html' />
+	<link rel='archives' title='September 2010' href='../../2010/09/index.html' />
+	<link rel='archives' title='April 2010' href='../../2010/04/index.html' />
+	<link rel='archives' title='January 2010' href='../../2010/01/index.html' />
+	<link rel='archives' title='October 2009' href='../../2009/10/index.html' />
+	<link rel='archives' title='September 2009' href='../../2009/09/index.html' />
+	<link rel='archives' title='August 2009' href='../../2009/08/index.html' />
+	<link rel='archives' title='May 2009' href='../../2009/05/index.html' />
+	<link rel='archives' title='April 2009' href='../../2009/04/index.html' />
+	<link rel='archives' title='March 2009' href='../../2009/03/index.html' />
+	<link rel='archives' title='February 2009' href='../../2009/02/index.html' />
+	<link rel='archives' title='January 2009' href='../../2009/01/index.html' />
+	<link rel='archives' title='November 2008' href='../../2008/11/index.html' />
+	<link rel='archives' title='October 2008' href='../../2008/10/index.html' />
+	<link rel='archives' title='August 2008' href='../../2008/08/index.html' />
+	<link rel='archives' title='June 2008' href='../../2008/06/index.html' />
+	<link rel='archives' title='May 2008' href='../../2008/05/index.html' />
+	<link rel='archives' title='March 2008' href='../../2008/03/index.html' />
+	<link rel='archives' title='February 2008' href='../../2008/02/index.html' />
+	<link rel='archives' title='January 2008' href='../../2008/01/index.html' />
+	<link rel='archives' title='December 2007' href='../../2007/12/index.html' />
+	<link rel='archives' title='November 2007' href='../../2007/11/index.html' />
+	<link rel='archives' title='October 2007' href='../../2007/10/index.html' />
+	<link rel='archives' title='September 2007' href='../../2007/09/index.html' />
+	<link rel='archives' title='August 2007' href='../../2007/08/index.html' />
+	<link rel='archives' title='July 2007' href='../../2007/07/index.html' />
+	<link rel='archives' title='June 2007' href='../../2007/06/index.html' />
+	<link rel='archives' title='April 2007' href='../../2007/04/index.html' />
+	<link rel='archives' title='February 2007' href='../../2007/02/index.html' />
+	<link rel='archives' title='January 2007' href='../../2007/01/index.html' />
+	<link rel='archives' title='December 2006' href='../../2006/12/index.html' />
+	<link rel='archives' title='November 2006' href='../../2006/11/index.html' />
+	<link rel='archives' title='August 2006' href='../../2006/08/index.html' />
+	<link rel='archives' title='July 2006' href='../../2006/07/index.html' />
+	<link rel='archives' title='June 2006' href='../../2006/06/index.html' />
+	<link rel='archives' title='May 2006' href='../../2006/05/index.html' />
+	<link rel='archives' title='April 2006' href='../../2006/04/index.html' />
+	<link rel='archives' title='March 2006' href='../../2006/03/index.html' />
+	<link rel='archives' title='February 2006' href='../../2006/02/index.html' />
+	<link rel='archives' title='December 2005' href='../../2005/12/index.html' />
+	<link rel='archives' title='November 2005' href='../../2005/11/index.html' />
+	<link rel='archives' title='October 2005' href='../../2005/10/index.html' />
+
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 2.7.1" />
+
+</head>
+<body>
+
+<div id="header">
+	<h1><a href="../../index.html">Metablog</a></h1>
+	<p id="description">I am intelligent. I am rational. I am moral. I am human.</p>
+</div>
+
+<div id="mainClm"><div>
+
+      <div class="post" id="post-50">
+    <h2>Chris&#8217;s dynamic compressor</h2>
+      <div class="entrytext">
+                <p><b>Update: </b> 1.2.7 beta 1 version released. Interesting new feature! See below.</p>
+<p>I&#8217;ve written a program that makes it easier to listen to classical music, or other music that has a wide range of volumes, at low volumes or in high noise conditions (such as in your car) so that you can still hear the soft parts. I&#8217;ve also written a plugin version, designed to be used with the free audio editor <a href="http://audacity.sourceforge.net/">Audacity</a>. You can read about the background and rationale of the plugin <a href="rationale/index.html">here</a>.</p>
+<p>For you to hear it in action, I&#8217;ve provided three 30 second clips of the fourth piece from Debussy&#8217;s Children&#8217;s Corner suite, The Snow is Falling. They use version 1.1 of the compressor, so results will differ slightly, and the settings are named differently. The <a href="../../projects/compressor/snow-unc.mp3">first</a> has no adjustment, the <a href="../../projects/compressor/snow-c1.5.mp3">second</a> has compression applied with both rise and fall speed at the default 1.5 dB/s, and the <a href="../../projects/compressor/snow-c5.mp3">third</a> has compression applied with fall and rise speed set to a more aggressive 5 dB/s.</p>
+<p>It was a lot of fun to program. I hope a lot of people get some good use out of it. I hope it allows me, and possibly you, to enjoy our classical music more often, and to more easily share it with our friends.</p>
+<h3><a name="download"></a>Download and Use</h3>
+<p>My program currently comes in two versions. One is a standalone program, both with a GUI and console interface. It&#8217;s useful for batch processing, and allows you to directly compress to/from MP3s (Lame required). (Audacity doesn&#8217;t currently support batch processing using a Nyquist plugin.) Download version 1.2.6 <a href="../../projects/compressor/Compressor-dotnet.zip">here</a>. It requires the .NET framework version 3.5 (or Mono 1.9). If you&#8217;re using the GUI version, check out the commandline version for explanations of the parameters. People have reported problems using this version on Vista and Windows 7. (Specifically, the output is playing back at double speed.) I doubt the OS is the problem, but I&#8217;ve had no reports of problems on XP. You can try it anyway, or you can contact me and help me debug it and fix the problem.</p>
+<p>The other is an Audacity plugin, currently at version 1.2.6 (or, below, a beta version 1.2.7). To use it, <a href="http://audacity.sourceforge.net/download/?lang=en">download</a> and install Audacity. Download the <a href="../../projects/compressor/compress.ny">plugin source</a> (i.e. right click on that link and select &#8220;Save target as&#8230;&#8221; or your browser&#8217;s equivalent), and put it in your audacity plugins directory, which should be under the main install directory. On windows, that&#8217;s usually C:\Program Files\Audacity\plugins. On unix, /usr/[local/]share/audacity/plugins. On OS X, /Applications/Audacity/plug-ins. Your browser, if it sucks, might insist on saving the file with a &#8220;.txt&#8221; extension behind your back. If it does, you&#8217;ll have to remove this to get the plugin installed.</p>
+<p><a href="../../projects/compressor/compress-b1.ny">1.2.7 beta 1</a> is a new version of the audacity plugin with an experimental feature enabled by default (at the bottom of the parameters screen). It might give better results, especially for very low volume listening (which includes listening in noisy environments, such as in cars). It adjusts for the extra sensitivity people have to frequencies in the 3-7 kHz range, i.e. bright or brassy sounds. It doesn&#8217;t change the tone, but it makes bright sounds softer than it otherwise would, to give a perceptually more even volume, even though the actual amplitude is less equal. Try it out if you like. Let me know what you think. (I tried a feature to compensate for the lesser sensitivity to bass sounds, but the results were terrible for some reason.)</p>
+<p>If your music is on CD, use a CD ripping program to make a .wav file of each track. You can encode the wav file (to mp3, ogg, etc.) after you&#8217;ve applied the dynamic compression. Use Audacity to open the sound file. Select the whole thing, then go to the Effects menu, to the bottom at Plugins (or below the horizontal divider), and select &#8220;Compress dynamics&#8230;&#8221;. Adjust the settings to your liking, and click OK. To save your changes, you need to go to File \\ Export wav or Export mp3. File \\ Save will not do what you want it to.</p>
+<p>The plugin version has advanced options (including separate attack/release speeds) that can be activated by downloading <a href="../../projects/compressor/compress-adv.ny">this version</a>, or by following the instructions in the .ny file. If you&#8217;re used to having finer control over your compressor, you might consider these. (They&#8217;re explained in <a href="options-explained/index.html">the tutorial</a>.)</p>
+<p>For the most part, the default settings will work just fine. The first setting is the main one, letting you choose how heavy or light to compress.</p>
+<h3>Tutorial</h3>
+<p><a href="options-explained/index.html">Here.</a></p>
+<h3>Changes in 1.2.6</h3>
+<p>For the plugin: Hide a bunch of advanced options by default and replace them with a single option that should be sufficient for 99% of uses. Clarify documentation a bit.</p>
+<p>For the standalone: Throw an error when the WAV file isn&#8217;t in the expected format. Also, try to handle long RIFF subchunks before the data chunk better.</p>
+<h3>Changes in 1.2.5</h3>
+<p>1.2.2 introduced a problem where memory usage was very high, so it probably didn&#8217;t work on very long inputs. It didn&#8217;t work on mono inputs either.</p>
+<p>Let&#8217;s just pretend 1.2.4 never happened.</p>
+<h3>Changes in 1.2.3</h3>
+<p>1.2.2 was broken on longish inputs (more than a few minutes) due to a bug in Nyquist. I was able to work around the bug.</p>
+<h3>Changes in 1.2.2</h3>
+<p>Two bugs were fixed. One caused tracks to be truncated sometimes after a period of silence in the track. The other caused inappropriate volume gains on certain parts of the track, usually at the end. (Specifically, the compression was being applied about 1/30 sec too soon.) Neither of these bugs were present in the program version.</p>
+<h3>Changes in 1.2.1</h3>
+<p>A simple noise gate is added. The floor is specified in decibels now, instead of linear.</p>
+<h3>Changes in 1.2</h3>
+<p>A completely different compression algorithm is used, based on parabolas instead of lines. It strikes a better balance between fast and slow changes, by varying its rate of change so that the envelope doesn&#8217;t leave so much empty space (i.e. low-volume sections) without losing too much transparency. You get a couple more parameters to play with. You can emulate the behavior of the old version by setting the exponent parameters to 1. The audacity version has much better memory usage (and thus, speed) on larger inputs than the previous version.</p>
+<h3>Changes in 1.1</h3>
+<ul>
+<li>Bugfix. It caused some areas to be amplified way too much on files, especially when the rise and fall speed were too high.
+</li>
+<li>Renamed existing parameters to more conventional things for compressors.
+</li>
+<li>Added a noise floor parameter, which lets you leave alone (apply a constant gain) parts of the audio below a threshold.
+</li>
+<li>Added a compression ratio parameter, which lets you not bring everything all the way up to the same level, and also do weird things with ratios outside the normal range.
+</li>
+</ul>
+<h3>Code</h3>
+<p>Download the code using the <a href="http://bazaar-vcs.org/">Bazaar revision control system</a> from http://pdf23ds.net/bzr/Compressor/trunk .</p>
+<h3>How it works (technical details)</h3>
+<p>First you resample down by a factor of 1500 or so using the max and abs functions to get a representation of the volume of the sound at any given point (the input envelope); Then you construct a compression envelope around the input envelope that &#8220;hugs&#8221; it in just the right way, and then you drag up the compression envelope points to 0 dB (and the volume of the input sound with it), i.e. you multiply the input sound by (1 - 1 / the compression envelope) * the compression ratio (or something like that&#8212;you get the idea, I think).</p>
+<p>My compressor calculates its compression envelope thus: It first calculates a &#8220;paraboloid&#8221;, which is what I call the function</p>
+<blockquote><p>f(x) = x > 0 ? a1*x^b1 : a2*x^b2</p></blockquote>
+<p>where a1,2 and b1,2 are parameters to the compressor. b1 and b2 are set by default to 4 and 2 respectively, which I think is the key to the compressor&#8217;s effectiveness. Then it tries to fit sections of this paraboloid to hug, as closely as possible, the input envelope without going under it (which would cause clipping). It turns out there&#8217;s a unique fitting that&#8217;s the best, and it&#8217;s pretty simple to calculate using lookahead with a trial-and-error technique.</p>
+<p>And that&#8217;s basically it. In versions earlier than 1.2, I had the simpler idea of using straight lines instead of curves, which gives OK results, but not quite as nice.</p>
+                        <p class="byline">
+          You can follow any responses to this entry through the <a href='feed/index.html'>RSS 2.0</a> feed. 
+                      You can <a href="#respond">leave a response</a>, or <a href="trackback/index.html" rel="trackback">trackback</a> from your own site.
+                  </p>
+      </div>
+    </div>
+    <br />
+  
+<!-- You can start editing here. -->
+
+  <h4 id="comments">162 Responses to &#8220;Chris&#8217;s dynamic compressor&#8221;</h4>
+  <div class="commentlist">
+  
+    <div id="comment-1977">
+
+      <cite><a href='http://adventuresinsoftware.com/' rel='external nofollow' class='url'>Michael L Perry</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-1977" title="">January 13th, 2007 at 18:10</a> </small>
+
+      <div class="comment"><p>Thanks for this fantastic compressor. I&#8217;m using it to level the speech in the latest episode of my podcast. The one built into Audacity must have a non-zero attack time, which results in every new segment of speech beginning with a loud blast. I was actually looking for Nyquist samples so that I could write my own leveler. You&#8217;ve not only saved me hours of fine-tuning per episode, but days or weeks of research and development.</p>
+<p>I record each person on a separate track, so there are long periods of silence on each track while that person is listening. I&#8217;m experiencing a strange artifact during those portions where the volume would turn up and I would hear that person breathing. But I think that adjusting the floor will take care of that problem.</p>
+<p>Thanks for all your hard work. It&#8217;s a real time saver.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-1982">
+
+      <cite>Mike</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-1982" title="">January 27th, 2007 at 15:34</a> </small>
+
+      <div class="comment"><p>Wow! This is exceedingly convenient. I, for one, appreciate this very very much.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-1983">
+
+      <cite>David Gessel</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-1983" title="">January 28th, 2007 at 20:02</a> </small>
+
+      <div class="comment"><p>Is it possible to set the attack and release to faster than 20db/sec? I have gun shots in a live sound track over voices, and want to avoid hard clipping.</p>
+<p>-David</p>
+</div>
+    </div>
+
+  
+    <div id="comment-1984">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-1984" title="">January 28th, 2007 at 20:35</a> </small>
+
+      <div class="comment"><p>For those, I would definitely try to manually correct for the individual gunshots. (The Nutcracker?) Audacity has a volume envelope tool that you can use to precisely deal with that sort of thing. If you still want to use the plugin to do that, at the very top of the .ny file there&#8217;s the definitions for the parameters, that you can edit to change the allowed range.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-1988">
+
+      <cite>Dan Jolt</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-1988" title="">February 15th, 2007 at 14:31</a> </small>
+
+      <div class="comment"><p>Wow, your compressor works really well. I agree with Michael, it&#8217;s good enough to use for podcast and (homebrew) radio production.</p>
+<p>Hope you don&#8217;t mind a feature request:<br />
+Is it possible to add a flag, so that the compression would only be performed on a single channel (left/right) based on either the volume of this channel or the combined volume of both? </p>
+<p>This would allow mono &#8220;talk-over&#8221; effects if you record your spoken track on one channel and have music on the other. First you could compress the voice channel and then the music in a way that it whenever something is spoken on the other channel, the music stays in the background to immediately return afterwards.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-1989">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-1989" title="">February 15th, 2007 at 17:30</a> </small>
+
+      <div class="comment"><p>Dan, I think that the option you&#8217;re looking for is really more of a separate plugin. The basic idea would be to take a volume envelope of the compressed voice track, invert it, and scale the background track to follow the inverted envelope. That sounds like a five line plugin to me, but I&#8217;m not up to writing it anytime soon. If I had to guess, it&#8217;d look something like</p>
+<p>(mult background-snd (invert (snd-avg voice-snd 2000 1000 op-peak)))</p>
+<p>where &#8220;invert&#8221; isn&#8217;t actually a Nyquist function, and you extract the &#8220;background-snd&#8221; and &#8220;voice-snd&#8221; sounds from the appropriate places.</p>
+<p>You could try putting a request to the audacity-nyquist list, though.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2028">
+
+      <cite><a href='http://uduogah.wordpress.com/2007/10/15/links-for-2007-10-15/' rel='external nofollow' class='url'>links for 2007-10-15 &laquo; Where Is All This Leading To?</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2028" title="">October 14th, 2007 at 18:20</a> </small>
+
+      <div class="comment"><p>[...] Metablog » Chris’s dynamic compressor (tags: compressor compression audio audacity nyquist plugins opensource freeware mac linux osx windows winxp) [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2067">
+
+      <cite><a href='http://www.allenmcbride.com/' rel='external nofollow' class='url'>Allen McBride</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2067" title="">August 28th, 2008 at 3:49</a> </small>
+
+      <div class="comment"><p>Great plug-in!  It&#8217;s weird no one has posted since last October. Thanks!  &#8212;Allen</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2068">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2068" title="">August 28th, 2008 at 20:41</a> </small>
+
+      <div class="comment"><p>Heh. I think I had some overzealous spam protection there for a while.</p>
+<p>Incidentally, I&#8217;m about to release a new version with a new, better algorithm. I have initially written it in C# but could make it work (somewhat more slowly) in Audacity. If you have a standalone tool, would you still want the audacity plug-in? (If I don&#8217;t write a new audacity plug-in I&#8217;ll leave the old plug-in.)</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2069">
+
+      <cite><a href='http://www.allenmcbride.com/' rel='external nofollow' class='url'>Allen McBride</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2069" title="">August 29th, 2008 at 21:33</a> </small>
+
+      <div class="comment"><p>I&#8217;ll look forward to your new version.  From my perspective, I think an Audacity plug-in would be useful.  To use a standalone tool I assume I&#8217;d need to export the audacity project to a single file and then re-import, right?  Plus I use a Mac&#8230; is my sense correct that it&#8217;s hard to make C# programs run on Mac?</p>
+<p>Thanks again,<br />
+Allen</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2070">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2070" title="">August 29th, 2008 at 23:23</a> </small>
+
+      <div class="comment"><p>The Mono framework should allow programs such as mine to run on a Mac. It requires the 1.9 version, though, which is still prerelease and a quite large download&#8212;95 MB or so.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2072">
+
+      <cite><a href='http://www.allenmcbride.com/' rel='external nofollow' class='url'>Allen McBride</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2072" title="">September 23rd, 2008 at 20:48</a> </small>
+
+      <div class="comment"><p>Hi Chris,</p>
+<p>I&#8217;m still getting lots of milage from your compressor.  Thanks for the advice about changing the slider ranges; that lets me know for sure my settings are what I want them to be.  I have another question about the noise floor, though &#8212; I&#8217;ve finally realized that it doesn&#8217;t behave as I had assumed.  Sections of audio beneath the noise floor are still raised, just not quite as much as if you don&#8217;t set a noise floor.  So if someone doesn&#8217;t speak for a couple seconds, you get a little hill of background noise in the middle of the break in speech.  So I changed &#8220;(defun limit-amp (samp) (if (and (&gt; floor 0) (&gt; samp max-gain)) max-gain samp))&#8221; to &#8220;(defun limit-amp (samp) (if (and (&gt; floor 0) (&gt; samp max-gain)) 1 samp))&#8221;.  This sort of does more like what I&#8217;d expect, though of course if something just barely breaks the noise floor, up it comes.  But I barely read Lisp, so I still don&#8217;t know how most of the compressor works, and I thought I&#8217;d get your reaction to this, and see if you had any other thoughts.</p>
+<p>Thanks,<br />
+Allen</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2073">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2073" title="">September 23rd, 2008 at 23:33</a> </small>
+
+      <div class="comment"><p>Yeah, I think what you&#8217;re looking for is a &#8220;noise gate&#8221;. Lots of compressors have them built in, but I don&#8217;t have one in mine because it&#8217;s not really appropriate for most classical music recordings, which is what I wrote the plugin for. Alas, it seems that most people use it for speech instead. I&#8217;m not sure how I&#8217;d go about implementing a <i>good</i> noise gate algorithm, because I haven&#8217;t ever thought about it. The naive noise gate algorithm is just what your change consists of, and I&#8217;m not sure how much you can improve on that. But you might look for another plugin to apply in a separate pass (probably before compression).</p>
+<p>The other thing I might do is decrease the compression ratio and attack/falloff speeds a bit. (Normalizing before compressing would help too.) That way the compression isn&#8217;t much harsher overall, but noise isn&#8217;t boosted as much.</p>
+<p>I guess a more general solution would be to generalize the compression ratio parameter into a function with a domain of input dB and range of output dB, which is how SoundForge&#8217;s compressor works. It would probably be relatively easy to implement, but Audacity doesn&#8217;t offer a good GUI for that, or a way to create one, so you&#8217;d have to tweak the file itself every time you changed the function. The function would just replace &#8220;adjust-samp&#8221;, and look something like this, I guess:</p>
+<pre>(defun adjust-samp (db)
+  (db-to-linear
+    (cond
+      ((&lt; db -30) 0)
+      (t db))))
+</pre>
+<p>&#8220;cond&#8221; is like a switch statement, with &#8220;t&#8221; being the default clause. The maximum amplitude and noise floor parameters would become superfluous. The sample function there silences everything below -30 dB and applies no change to everything else. But ideally if you graphed the &#8220;adjust-samp&#8221; function it would be continuous. I don&#8217;t think adjust-samp actually works on samples, btw.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2074">
+
+      <cite><a href='http://www.allenmcbride.com/' rel='external nofollow' class='url'>Allen McBride</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2074" title="">September 25th, 2008 at 12:48</a> </small>
+
+      <div class="comment"><p>Thanks, Chris!  This is helpful.  I will play with noise gates, and with the adjust-samp function once I learn enough Nyquist to understand what&#8217;s going on.  So do you think we&#8217;re crazy to use your compressor on speech?  The conventional compressors may have some advantages, but the thing I like about yours is that it doesn&#8217;t miss any spikes.  The Audacity compressor misses spikes (like mic hits or cassette tape artifacts) during compression, but then the spikes keep the normalizer from bringing up the volume, so I end up having to remove the spikes by hand.  (Click removal doesn&#8217;t really seem to work; I&#8217;m not sure why.)  Also, what do you mean when you say you don&#8217;t think adjust-samp works on samples? </p>
+<p>Allen</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2084">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2084" title="">October 4th, 2008 at 1:58</a> </small>
+
+      <div class="comment"><p>&#8220;So do you think we’re crazy to use your compressor on speech?&#8221;</p>
+<p>Hey, if it works for you that&#8217;s great. I&#8217;m not surprised it does better than other sorts of compressors for some things. Nyquist comes with a compressor that&#8217;s similar to mine, but Audacity&#8217;s repackaging of Nyquist doesn&#8217;t include it (or a couple of library functions it uses).</p>
+<p>&#8220;Click removal doesn’t really seem to work&#8221;</p>
+<p>Well, clicks, pops, and other artifacts may sound similar but methods used to detect them can vary widely. For a microphone hitting something, I usually do a high-pass filter at around 20-50 Hz. It doesn&#8217;t get rid of the sound, but it gets rid of the peak in the waveform. For speech, I&#8217;d probably do a highpass to the whole thing. For dealing manually with big peaks, it&#8217;s pretty easy to use Audacity&#8217;s interactive envelope function to scale it way down.</p>
+<p>&#8220;what do you mean when you say you don’t think adjust-samp works on samples&#8221;</p>
+<p>The value passed to adjust-samp isn&#8217;t an individual sample, but part of the envelope that gets interpolated over the waveform. adjust-samp gets called once for each thousand samples.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2113">
+
+      <cite>Devon</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2113" title="">January 9th, 2009 at 16:42</a> </small>
+
+      <div class="comment"><p>Hi, </p>
+<p>Very cool to see such a powerful tool for us amateur producers. I work with dance music, often from somewhat degraded MP3s. Any suggested settings for getting a degraded track to sound punchy and full using compression? Thanks.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2114">
+
+      <cite><a href='http://pmlessonslearned.com/' rel='external nofollow' class='url'>Henry</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2114" title="">January 12th, 2009 at 9:10</a> </small>
+
+      <div class="comment"><p>Thanks for the great tool! We use your dynamic compressor for our PMlessonsLearned.com podcast. We record conference calls and then podcast them as MP3s.  Question: We are basically using the compressor to even out the volume of all of our speakers. Since there are many different people on the conference calls using all types of phone equipment, the volume varies all over the map. We just want to correct the volume from all these voices to make them all the same. Can you suggest how to set the compressor settings to make this work the best for our application?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2115">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2115" title="">January 13th, 2009 at 20:18</a> </small>
+
+      <div class="comment"><p>Devon: Sorry, no particular advice.</p>
+<p>Henry: If you tell me how you would like it to sound different from the default settings, I might be able to help you.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2116">
+
+      <cite><a href='http://pmlessonslearned.com/' rel='external nofollow' class='url'>Henry</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2116" title="">January 21st, 2009 at 6:58</a> </small>
+
+      <div class="comment"><p>Our goal is simply to keep the volume even throughout our podcast. Our podcast is a recorded conference call, so we have people calling in that are very loud and others who are very soft and everywhere in between. </p>
+<p>We seem to have arrived at some good settings by just using the default settings with one change: we change the first number to .99 - If I interpret your writings correctly, this should allow all areas to be increased in amplification to the full .95 (last setting) very quickly, so we should be able to hear all callers on the conference call at about the same volume. </p>
+<p>As far as I can tell, this is true for your &#8220;old&#8221; plug-in and the &#8220;new&#8221; one that has more settings. </p>
+<p>Changing this one setting seems to cause all of the various &#8220;speakers&#8221; on our call to be brought to full volume. Which I think is what we want. </p>
+<p>I&#8217;ve run this on our audio and listened to random spots within and it seems this works well. The only issues are:</p>
+<p>1. &#8220;quiet&#8221; (when nobody is talking) seems to slowly rise in volume. I know that&#8217;s what the floor is for, but I don&#8217;t think we can get around this because sometimes &#8220;quiet&#8221; is noisier than some of our callers (you can imagine background noise on someone&#8217;s phone who has lots of gain is louder than someone who&#8217;s phone has very little gain and is talking). So, I don&#8217;t think we can fix this one and it&#8217;s not too annoying.</p>
+<p>2. Sometimes during &#8220;quiet&#8221; someone will make a noise we don&#8217;t want amplified. For example, I was listening to one piece of the audio where it sounded like someone in the background dropped a bunch of pots and pans in the background. Well, that was amplified too. Again, I don&#8217;t see any way to avoid this and it&#8217;s not too annoying.</p>
+<p>So, I guess my questions are:<br />
+1. Did I interpret the first setting correctly: .99 will amplify all parts of the audio all the way up to the value in the last setting (.95) no matter how quiet they are?<br />
+2. Do you think changing the ramp up/down values would matter much to get us to full volume quicker? (We&#8217;re currently just using the defaults)</p>
+<p>Thanks again for this wondrously useful tool!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2117">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2117" title="">January 22nd, 2009 at 22:13</a> </small>
+
+      <div class="comment"><p>Henry, your understanding of the compression ratio parameter (the first one) is correct. It is pretty much the same between versions.</p>
+<p>The speed at which the quiet parts get louder is determined by the release speed. If you make that a little faster then the noise rising in volume might not be quite so noticable or annoying. The speed and which things get quieter (before loud parts) is the attack. In version 1.0 these were called rise and fall speeds, I forget which were which. Also, the different versions invert the effect of the sliders, I think. In the latest version, I think you want to lower them.</p>
+<p>Anyway, the best handling of noise in your case is probably just selecting the quiet parts and using Audacity&#8217;s envelope tool to quieten them down manually. That&#8217;ll also take care of clumsy callers slipping in their kitchens.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2123">
+
+      <cite>Mauricio Kanada</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2123" title="">February 11th, 2009 at 10:37</a> </small>
+
+      <div class="comment"><p>Wonderfull compressor!!! Simply the best!</p>
+<p>Can I make a suggestion?</p>
+<p>1 - One option to normalize automatically before compression.<br />
+2 - Parameters in dB.<br />
+3 - A pre-processor to find the parameters that make volume fit in one range of db. Something like &#8216;minimum volume: 80 db; maximum volume: 96 db;&#8217;.</p>
+<p>Some time ago, I have read something about K profiles about music compression. You can find more <a href="http://books.google.com.br/books?id=EBCmpwGCROMC&amp;pg=PA190&amp;lpg=PA190&amp;dq=K-20+K-12+compression&amp;source=bl&amp;ots=zZP-xqyhEe&amp;sig=CgIpcNKan5lmDFt2385s6hffc20&amp;hl=pt-BR&amp;ei=de-SScSYC5Kj-gboyvShCw&amp;sa=X&amp;oi=book_result&amp;resnum=5&amp;ct=result" rel="nofollow">here</a>.</p>
+<p>Finally a question. I have my entire music collection that I would like to process it with your compressor. Do you know anything that could do this in batch?</p>
+<p>Thanks</p>
+<p>Maurício Kanada</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2124">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2124" title="">February 11th, 2009 at 19:29</a> </small>
+
+      <div class="comment"><p>Mauricio: I provide above a link to a Windows version of the compressor that is able to process batches of files at a time. (It also has a commandline interface.) Unfortunately, it does not do de/en-coding.</p>
+<p>As to your second suggestion, my latest version of the audacity plugin, 1.2.1 (as of two days ago), has &#8216;floor&#8217; in dB, but the rise and fall parameters don&#8217;t relate to dB in any simple way. Noise gate falloff is in dB/s, so I might be able to change it if it&#8217;s not already scaled right. So I&#8217;m afraid that&#8217;s mostly not going to happen.</p>
+<p>As to your first and third suggestion, that would require two passes, which would make the plugin much, much slower in Audacity. So I&#8217;m not going to do those. If you want to suggest a feature, suggest to the Audacity folks to let you create/save/load chains of effects and maybe even a batch mode. Though it does strike me that there&#8217;s not a way to do your third feature with other effects without trial and error.</p>
+<p>I might implement the third feature in the windows version, though. Two passes can be handled more efficiently there.</p>
+<p>Re you first suggestion, note that you can apply gain by changing the maximum amplitude property. The property isn&#8217;t relative to the peak value, but to 0 dB. I believe you can set it > 1. You get clipping if it&#8217;s too high, though.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2129">
+
+      <cite><a href='http://www.marketing-playbook.com/' rel='external nofollow' class='url'>John Fox</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2129" title="">February 23rd, 2009 at 16:39</a> </small>
+
+      <div class="comment"><p>Chris,</p>
+<p>Your ARE a genius. I recorded a telephone interview today and had inadvertently jacked up my microphone volume, hence drowning out my guest. Ugh! I searched high and low to fix the problem &#8230;. and then came across your plugin for Audacity. What a godsend. </p>
+<p>Many, many sincere thanks!</p>
+<p>John Fox, President<br />
+Venture Marketing</p>
+<p>B2B Marketing Resources for Small Business:<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+<a href="http://www.marketing-playbook.com/" rel="nofollow">http://www.Marketing-Playbook.com</a> The Definitive Guide to B2B Marketing for Small Business</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2132">
+
+      <cite>stevethefiddle</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2132" title="">February 24th, 2009 at 7:04</a> </small>
+
+      <div class="comment"><p>This really is an awesome compressor. Very nice work.</p>
+<p>I usually normalise the audio first using Audacities built in Normalize effect (which is faster than normalising with Nyquist), then the compression settings are more predictable.</p>
+<p>This is a 5 star &#8220;must have&#8221; plug-in for Audacity users.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2142">
+
+      <cite><a href='http://www.marketing-playbook.com/' rel='external nofollow' class='url'>John Fox</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2142" title="">February 28th, 2009 at 13:00</a> </small>
+
+      <div class="comment"><p>I need to reset the compressor back to the default values. Where can I find these settings? Thanks.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2143">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2143" title="">February 28th, 2009 at 13:58</a> </small>
+
+      <div class="comment"><p>Open up the plugin directory, open the compressor.ny file, make a small change, like adding a space, save it, and restart audacity. All your defaults will return.</p>
+<p>If you like, you can try to read the parameters. They&#8217;re up at the top. I think the first number on the line is the default value.</p>
+<p>;control compress-ratio &#8220;Compress ratio&#8221; real &#8220;&#8221; .5 -.5 1.25</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2144">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2144" title="">March 1st, 2009 at 3:19</a> </small>
+
+      <div class="comment"><p>We&#8217;ve been recommending the latest version of your compressor on the Audacity help forums.  </p>
+<p>I record off-air radio shows and enjoy the station&#8217;s compressors which help enormously when I&#8217;m listening in the car.</p>
+<p>It works less well if I record the streaming version of shows.  Those have constant volume variations.  Your compressor with the Compression Ratio advanced to 0.77 is almost a dead ringer for the local station&#8217;s own processing.</p>
+<p>I, too, tried all the existing compression tools and thought they were pretty dreadful.  This one is excellent.</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2145">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2145" title="">March 1st, 2009 at 3:27</a> </small>
+
+      <div class="comment"><p><i>We had an interesting spat with the design of that tool.  Did you know that the default is to &#8220;normalize&#8221; left and right independent of each other?  It can seriously damage the stereo image of the show.</i></p>
+<p>I usually normalise the audio first using Audacities built in Normalize effect </p>
+<p>Koz</p>
+<p><i>[I think this is what you meant to do --pdf23ds]</i></p>
+</div>
+    </div>
+
+  
+    <div id="comment-2147">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2147" title="">March 1st, 2009 at 4:22</a> </small>
+
+      <div class="comment"><p><i>I record off-air radio shows and enjoy the station’s compressors which help enormously when I’m listening in the car.</i></p>
+<p>Ha. I <i>knew</i> my classical station had a good compressor.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2148">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2148" title="">March 2nd, 2009 at 0:41</a> </small>
+
+      <div class="comment"><p>Actually, I wanted to quote the earlier post and then comment on it.  Upside down from the way you patched it for me.</p>
+<p>Turns out chicken beak sequences (left, left, left, quoted text, right, right, right) are interpreted as things or actions in this list.  Who knew?</p>
+<p>I almost didn&#8217;t believe them when one of the other Audacity helpers told me about your compressor.  It&#8217;s so unlikely that a programmer would go through the right-brain exercise of making it sound right instead of just throwing theoretical code modules at it and call it good.  It&#8217;s not good. Those are usually terrible in execution and then they need post production to make the result useful.</p>
+<p>To borrow a Mac phrase, this one &#8216;just works&#8217;.®</p>
+<p>Thanks again,</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2151">
+
+      <cite><a href='http://www.allenmcbride.com/' rel='external nofollow' class='url'>Allen McBride</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2151" title="">March 13th, 2009 at 1:22</a> </small>
+
+      <div class="comment"><p>Wow, looks like your compressor is finally getting the attention it deserves.  There&#8217;s a new thread over at the Audacity forums (http://audacityteam.org/forum/viewtopic.php?f=16&amp;t=9058) about some crash problems.  I mention there that I&#8217;ve been meaning to write you to say that it seems like the newest version crashes for me when my selected region starts very near, but not at, the beginning of the track.  But that I&#8217;ve been putting off writing you, because I want to experiment more and describe the problem more precisely.  Also, with really long files, I&#8217;ve noticed a teensy decrease in the length of the track after using the plug-in.  Roughly, compressing an hour of audio seems to make it about .05 seconds shorter.  Obviously not a big deal in itself, but I thought you might be interested.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2155">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2155" title="">March 15th, 2009 at 0:02</a> </small>
+
+      <div class="comment"><p>I found a problem (lower case).</p>
+<p>Let&#8217;s say somebody hands you the file &#8216;compress.ny&#8217; cold and didn&#8217;t tell you what it was.  Trace it back to you or your web site.</p>
+<p>I bet you can&#8217;t do it either.</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2156">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2156" title="">March 15th, 2009 at 14:53</a> </small>
+
+      <div class="comment"><p>Koz, right there near the top in the latest version, at least, is my name and website. Maybe I left it out of an older version; I forget.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2160">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2160" title="">March 19th, 2009 at 0:21</a> </small>
+
+      <div class="comment"><p>There it is.  I see it.  </p>
+<p>Maybe I don&#8217;t know enough about how XML works.   I see two different version numbers&#8230;??</p>
+<p>;nyquist plug-in<br />
+;version 1<br />
+;type process<br />
+;name &#8220;Compress &amp;dynamics&#8230;&#8221;</p>
+<p>(setf *gc-flag* nil)</p>
+<p>;;Version 1.2</p>
+<p>;;Authored by Chris Capel (http://pdf23ds.net)</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2165">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2165" title="">March 22nd, 2009 at 0:53</a> </small>
+
+      <div class="comment"><p>Another mini-complaint.  These are actual quotes from the Audacity help forum.</p>
+<p>============================</p>
+<p>&#8212;Can you tell me where the link is to download the compressor because I looked all through the link you gave me and could not find it.</p>
+<p>&#8212;12th paragraph:<br />
+&#8220;The other is an Audacity plugin, currently at version 1.2.1. To use it, download and install Audacity. Download the plugin source, &#8221;</p>
+<p>Right click on the link &#8220;plugin source&#8221; and choose &#8220;Save As&#8221;, then save, copy, or move the downloaded file into the Audacity plugin folder.</p>
+<p>==========================</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2166">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2166" title="">March 22nd, 2009 at 1:16</a> </small>
+
+      <div class="comment"><p>There is another similar problem when we actually use the program.</p>
+<p>Select some audio in Audacity or Select All.</p>
+<p>Effect &gt; Dynamic Processor &gt; Compressor &gt; Compressor &gt; Dynamic Range Compressor (by Dominic Mazzoni)</p>
+<p>Oops. That&#8217;s not it.</p>
+<p>Effect &gt; Utility</p>
+<p>Nope.</p>
+<p>Effect &gt; Unsorted &gt; Compress Dynamics &gt; Compress &amp;dynamics</p>
+<p>Nowhere in the working window does it mention Chris or the web site, or the identity of the program.  Keep in mind that the download file is named &#8220;compress.ny&#8221; and doesn&#8217;t have any identity information until line 26 in the code.</p>
+<p>Just reading this back to you.</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2168">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2168" title="">March 22nd, 2009 at 19:08</a> </small>
+
+      <div class="comment"><p><i>I see two different version numbers…</i></p>
+<p>The first one is the version of the plugin interface and can be ignored.</p>
+<p>I added an anchor to the page so that you can link to <a href="index.html#download" rel="nofollow">http://pdf23ds.net/software/dynamic-compressor#download</a></p>
+<p>In 1.2.6, or when I download the latest beta, I don&#8217;t see the menu structure you&#8217;re seeing. Particularly, I don&#8217;t see any submenus under Effect&#8212;I don&#8217;t see the Effect \ Unsorted menu at all. I just have a couple of lines in my menu separating different of items at the toplevel. Is there an option you have to turn on to make the menus more confusing?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2169">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2169" title="">March 24th, 2009 at 15:12</a> </small>
+
+      <div class="comment"><p>No, but I&#8217;m not surprised. The 1.3 version of Audacity is going through some pretty stiff revisions and the Effects menu in particular has been schizophrenic.  You can tell which rev you&#8217;re in by the presentation order of the effects.</p>
+<p>I didn&#8217;t know this would run in 1.2.6.  We&#8217;ve been sending people to Audacity 1.3 for this. Remember that the shiny new Mac/Intel people will be running 1.2.5, not 1.2.6. this catches about one person every two or three days.</p>
+<p>We&#8217;ve been pushing many people over here to help with their compression problems, so anything you can do to make the process easier and more obvious is good.</p>
+<p>Like calling it &#8216;Chris&#8217;s Compressor&#8217; instead of &#8216;Compress &amp;dynamics.&#8217;</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2170">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2170" title="">March 24th, 2009 at 19:26</a> </small>
+
+      <div class="comment"><p>Heh. The ampersand in 1.2.6 at least lets you press Alt+E+D to get the compressor. An ampersand shows up as an underline under the following character in Windows. Maybe it&#8217;s not portable to have that. Mainly it was for testing anyway.</p>
+<p>OK, I&#8217;ve tweaked the name some. If you let me know what annotations to use in the .ny file to get it sorted right in the Effects menu, I&#8217;ll put those in as well.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2171">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2171" title="">March 25th, 2009 at 15:11</a> </small>
+
+      <div class="comment"><p>I have a little more of that, but it can wait.  </p>
+<p>I was describing to someone how cool this thing was and I ran into a question.  I know you piled up all the tools you normally have to painfully execute one at a time to get the show to sound good. This compressor is one stop shopping.</p>
+<p>Do you remove DC?  I&#8217;m guessing yes because I&#8217;ve never had DC problems after I applied your compressor&#8230;but I&#8217;m guessing.</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2172">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2172" title="">March 26th, 2009 at 8:48</a> </small>
+
+      <div class="comment"><p>You are Officially Popular.  Google will hit you even if I spell your name wrong.</p>
+<p>[Google] &#8211;Do you mean &#8220;Chris&#8217;s Dynamic Compressor?&#8221;</p>
+<p>Yes.</p>
+<p>I do.</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2173">
+
+      <cite><a href='http://www.fluentizer.com/' rel='external nofollow' class='url'>Sergey</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2173" title="">March 26th, 2009 at 9:45</a> </small>
+
+      <div class="comment"><p>Hello,<br />
+Is there any way to get the source code for the standalone version of the program.<br />
+Thanks,<br />
+&#8211;Sergey</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2174">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2174" title="">March 26th, 2009 at 16:59</a> </small>
+
+      <div class="comment"><p>Sergey, see my e-mail and <a href="../../2008/11/01/all-my-source-are-now-available/index.html" rel="nofollow">this post</a>.</p>
+<p>Koz, no DC removal is done, unless it&#8217;s an accidental effect of the algorithm, which I doubt.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2176">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2176" title="">April 5th, 2009 at 13:06</a> </small>
+
+      <div class="comment"><p>I did a compression writeup featuring you.</p>
+<p><a href="http://audacityteam.org/forum/viewtopic.php?f=12&amp;t=9430&amp;p=38430#p38430" rel="nofollow">http://audacityteam.org/forum/viewtopic.php?f=12&amp;t=9430&amp;p=38430#p38430</a></p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2181">
+
+      <cite>Alan Roberts</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2181" title="">April 30th, 2009 at 6:51</a> </small>
+
+      <div class="comment"><p>Hello,</p>
+<p>Newbie trying to understand this tool, so I can script creation of my mostly-classical FLAC files into a parallel MP3 tree suitable for in-car iPod use.</p>
+<p>I&#8217;ve tried the Audacity plug-in, and understand the meaning of &#8220;attack&#8221; and &#8220;release&#8221; as described.</p>
+<p>Does &#8220;attack&#8221; in the plug-in correspond with &#8220;fall&#8221; (time and exponent) on the standalone tools, &#8220;release&#8221; with &#8220;rise&#8221;?  That seems to be the way the default values line up, but the help text for the command-line version seems to associate &#8220;fall&#8221; with &#8220;release.&#8221;</p>
+<p>Confused, my usual state,<br />
+Alan</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2182">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2182" title="">May 1st, 2009 at 16:39</a> </small>
+
+      <div class="comment"><p>Alan,</p>
+<p>I don&#8217;t really know for sure. Sorry. I can tell you that I don&#8217;t have the two very straight in my head, and I don&#8217;t think they&#8217;re named very well either way, so they could very easily be crossed one way or another. I think the best way to tell is to experiment. The default values are probably the best clue.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2184">
+
+      <cite>Otto</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2184" title="">June 10th, 2009 at 20:27</a> </small>
+
+      <div class="comment"><p>Is there any way to make this plug in show up in the list of available commands in chains (for batch processing) in the new Audacity beta?  This is a fantastic plug-in, and I am enjoying the music in my car so much.  Batch processing would make it easier.  Thanks, Chris!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2185">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2185" title="">June 10th, 2009 at 21:10</a> </small>
+
+      <div class="comment"><p>Otto, unfortunately, I have no control over that part of the program. You might repeat your suggestion on the main audacity mailing list, though. I&#8217;m sure they&#8217;re aware of the shortcoming, but it could help to make the request anyway.</p>
+<p>Glad you&#8217;re enjoying the plugin.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2186">
+
+      <cite>urbanspaceman</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2186" title="">June 20th, 2009 at 6:46</a> </small>
+
+      <div class="comment"><p>The plug in produces the sound I&#8217;m looking for, which is fantastic, but I&#8217;m having a major problem.  If I apply it to files longer than about 3 and a half minutes, the rendered file cuts off at that point.  I&#8217;m using Audacity 1.2.5 on an Intel Mac.  Anyone else encounter this?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2187">
+
+      <cite>Koz</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2187" title="">June 29th, 2009 at 12:10</a> </small>
+
+      <div class="comment"><p>Could this be a problem with the look&#8212;ahead modules?  It&#8217;s fairly well known that you need to append silence at the end of the show and then cut it off later to avoid the compressor doing very schizophrenic things to that last bit of the performance.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2188">
+
+      <cite><a href='http://www.anne-liselarsen.com/' rel='external nofollow' class='url'>Anne-Lise</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2188" title="">June 29th, 2009 at 22:20</a> </small>
+
+      <div class="comment"><p>Thanks for the quality plug in. I was having so much trouble trying to balance clipping with reasonable volume output. Fantastic!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2189">
+
+      <cite>Tom Lenz</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2189" title="">July 12th, 2009 at 3:12</a> </small>
+
+      <div class="comment"><p>Thanks so much for making this available. It&#8217;s really good. (Using it for speech where speaker alternately whispers and screams)</p>
+<p>Do you have a wish list or some way for those of us who would like to drop a token of our appreciation?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2195">
+
+      <cite>Koz</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2195" title="">August 9th, 2009 at 18:38</a> </small>
+
+      <div class="comment"><p>&lt;&lt;<i>&gt;&gt;</p>
+<p>There are known issues with Audacity 1.2.5 on an Intel machine running Leopard. There are no fixes.  Delete the program and install the latest 1.3.8.</p>
+<p>Koz<br />
+Audacity Elf</i></p>
+</div>
+    </div>
+
+  
+    <div id="comment-2197">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2197" title="">August 25th, 2009 at 12:06</a> </small>
+
+      <div class="comment"><p>I want to change the default compression from 0.5 to 0.77, but the compression code listings have several numbers.</p>
+<p>;control compress-ratio &#8220;Compress ratio&#8221; real &#8220;&#8221; .5 -.5 1.25</p>
+<p>Change the first number, or am I not even in the right place.<br />
+Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2198">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2198" title="">August 26th, 2009 at 21:12</a> </small>
+
+      <div class="comment"><p>Koz, the first number is indeed the default. You&#8217;re on the right track.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2200">
+
+      <cite>Pete</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2200" title="">September 22nd, 2009 at 5:13</a> </small>
+
+      <div class="comment"><p>Thanks so much for a fantastic compressor! Just a couple of queries based on things I found when trying it out using default settings with the audacity (ver 1.3.9 beta) plugin.</p>
+<p>1. It often lifts the last second/half second of music/vocal to an unnatural level compared to the rest of the piece - so that this end section doesnt appear to match. Is there any reason for this and a setting I could change to prevent this?</p>
+<p>2. When applied to a piece 90 seconds long it compressed the first 6 seconds of speech then truncated the file at that point so that 1 min 24 of audio was lost. Is there a reason this might happen and a setting I can change to prevent this?</p>
+<p>Look forward to any help you can offer</p>
+<p>Thanks again,</p>
+<p>pete</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2201">
+
+      <cite>Koz</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2201" title="">September 22nd, 2009 at 15:56</a> </small>
+
+      <div class="comment"><p>I think #2 may be a damaged sound file.  I use the compressor all the time and I never had that problem.  I don&#8217;t remember anybody else posting having that problem, either.</p>
+<p>However, that end-of-file thing is pretty common.  Look-ahead freaks out when it gets to the end of the file. A common work-around is to put Something at the end of the show so the software has something to chew on.</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2202">
+
+      <cite><a href='http://audacity.easyspacepro.com/' rel='external nofollow' class='url'>Steve</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2202" title="">September 23rd, 2009 at 12:53</a> </small>
+
+      <div class="comment"><p>First off, congratulations on an awesome compressor.</p>
+<p>Unfortunately there does appear to be a bug as Pete described in point 2 of his post (September 22nd, 2009).</p>
+<p>I have not found an easy way to reproduce the bug on demand, but I have saved a project that exhibits the problem. It is a 4:35 stereo track, and when applying the dynamic compressor to the entire track it gets truncated at 3min 59.</p>
+<p>This is the precise point where an audio clip was previously pasted. The project plays perfectly and there are no unusual effects from any other Nyquist effects.</p>
+<p>I can send the .AUP file if it will help to track down the problem. I can&#8217;t make the entire project public as it is copyright material, so e-mail me if you need the whole thing.<br />
+____________________</p>
+<p>Re point 1) from the same post by Pete I usually work around by adding a second of generated tone or noise at amplitude 1.0 to the end of the track (then trimming it off after processing). This workaround is only required if the track ends abruptly. It would perhaps be nice if the plug-in could emulate this by setting an amplitude level of 1 at the end of the track when calculating the gain. (I don&#8217;t know if this is possible as I don&#8217;t fully understanding the code).</p>
+<p>In the case where the track ends with a gradual fade out, the fade out may be boosted too much with the default settings, but increasing the &#8220;floor&#8221; setting fixes that.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2203">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2203" title="">September 23rd, 2009 at 12:56</a> </small>
+
+      <div class="comment"><p>Pete,</p>
+<p>I really ought to look into 1. Seems a lot of people have that problem. I should be able to reproduce it pretty easily. (Now that I&#8217;m temporarily jobless I should have some time to do this!)</p>
+<p>2 is another question. It probably indicates a rare bug in my compressor, something I wouldn&#8217;t be able to reproduce. If you want me to fix this, you could send me a .wav or .aup file that exhibits the problem, or you could press the &#8220;Debug&#8221; button when applying the effect and send me the output. A possible workaround is to apply some other effect to the sound first (like normalize, invert, or equalize), which might avoid triggering the bug.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2204">
+
+      <cite>Koz</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2204" title="">September 23rd, 2009 at 13:54</a> </small>
+
+      <div class="comment"><p>&lt;&lt;&gt;&gt;</p>
+<p>We need to remember that the AUP file is only the project manager.  To send anything meaningful, you also have to send the _DATA folder.  In addition, you have to have had Audacity set to Copy All Music, or the Project still isn&#8217;t going to play when it gets here.</p>
+<p>Zip it all into one archive so the transfer process doesn&#8217;t rape the files.</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2205">
+
+      <cite><a href='http://audacity.easyspacepro.com/' rel='external nofollow' class='url'>Steve</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2205" title="">September 25th, 2009 at 5:28</a> </small>
+
+      <div class="comment"><p>[Pete says:<br />
+September 22nd, 2009]<br />
+&lt;&gt;</p>
+<p>This occurs if there is a long section of complete silence (over about 1 second of sample values at zero).</p>
+<p>How to work around this:<br />
+If you have a track with a long period of silence in it, process it in sections so as to avoid processing the silence.</p>
+<p>Hopefully Chris will be able to fix this in a future version, but I am writing a longer description of the workaround on the Audacity help forum. I&#8217;ll post a link here when it&#8217;s done if that&#8217;s OK.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2206">
+
+      <cite><a href='http://audacity.easyspacepro.com/' rel='external nofollow' class='url'>Steve</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2206" title="">September 25th, 2009 at 5:31</a> </small>
+
+      <div class="comment"><p>Oops. The software has stripped out part of the above message. I was referring to the problem with processed tracks sometimes getting truncated.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2219">
+
+      <cite><a href='http://audacity.easyspacepro.com/' rel='external nofollow' class='url'>Steve</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2219" title="">October 2nd, 2009 at 17:14</a> </small>
+
+      <div class="comment"><p>I think I may have cracked the problem.<br />
+Change line 289 from &#8220;nil&#8221; to &#8220;0&#8243;.</p>
+<p>@ Chris, I&#8217;ll e-mail you with more details.</p>
+<p>Steve</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2220">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2220" title="">October 2nd, 2009 at 17:19</a> </small>
+
+      <div class="comment"><p>Steve, that&#8217;s a pretty good start, though not exactly right. (The if statement just needs to be removed and replaced by the max statement.) But changing it reveals a couple other problems that I&#8217;m still looking into. And I&#8217;m still trying to fix the weird behavior at the end of the selection.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2221">
+
+      <cite><a href='http://audacity.easyspacepro.com/' rel='external nofollow' class='url'>Steve</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2221" title="">October 2nd, 2009 at 18:07</a> </small>
+
+      <div class="comment"><p>I thought it was probably not 100% (a bit of a hack really), but you may notice that it does also improve the weird behaviour at the end.</p>
+<p>I&#8217;ve sent you an e-mail with a few more details and a link to a tiny Audacity project that reliably reproduces the problem.</p>
+<p>Steve</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2223">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2223" title="">October 4th, 2009 at 14:25</a> </small>
+
+      <div class="comment"><p>OK there. I just released 1.2.2, which fixes both the problems mentioned in the above comments.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2227">
+
+      <cite>Josep Z</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2227" title="">October 7th, 2009 at 11:14</a> </small>
+
+      <div class="comment"><p>Hi Chris!</p>
+<p>I&#8217;ve been using your wonderful compressor for quite some time now, and it has worked fine except for some cases where songs got truncated at the end.<br />
+It was great to read that version 1.2.2 would fix this&#8230; Unfortunately, the new version has brought some new problems in; Audacity just crashes when trying to apply the compressor to some songs, which makes it absolutely useless for me at the moment. :(<br />
+I don&#8217;t know if it happens to someone else, but it is very annoying, because now I don&#8217;t know where can I get 1.2.1 back.<br />
+Hope this gets fixed soon&#8230;</p>
+<p>Thanks for your efforts and keep up the good work!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2228">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2228" title="">October 7th, 2009 at 11:22</a> </small>
+
+      <div class="comment"><p>Josep, my apologies for somehow breaking it. (Though I have no clue how.) <a href="../../projects/compressor/compress-1.2.1.ny" rel="nofollow">Here&#8217;s 1.2.1</a>.</p>
+<p>I&#8217;ve reproduced the issue compressing a large-ish track, so I should have it fixed pretty quick.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2229">
+
+      <cite>Josep Z</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2229" title="">October 7th, 2009 at 11:33</a> </small>
+
+      <div class="comment"><p>Thanks for the file!</p>
+<p>I mean Audacity just disappears after applying the compressor. I just started using the new version today and worked fine with the first song; the second crashed every time. I tried to delete the last 2 seconds of the song, which are absolute silence, but it didn&#8217;t work.<br />
+No errors or anything; Audacity asks me to recover the previous session when opening again but that&#8217;s it.</p>
+<p>Just in case you need the info, I am currently running Audacity 1.3.5 in Ubuntu Hardy (8.04). I would use a newer version, but building from source in Hardy is a nightmare. There are built packages at Getdeb.net, but they are pretty buggy, so at the moment I am stuck with 1.3.5.</p>
+<p>Again, thanks a lot!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2231">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2231" title="">October 9th, 2009 at 13:53</a> </small>
+
+      <div class="comment"><p>OK, the problem with 1.2.2 was due to a bug in Nyquist. I worked around the bug and released 1.2.3.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2232">
+
+      <cite><a href='http://myrightbrain.wordpress.com/2009/10/11/song-good-night-not-good-bye-2009/' rel='external nofollow' class='url'>Song: Good-night Not Good-bye (2009) &laquo; My Right Brain</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2232" title="">October 11th, 2009 at 4:03</a> </small>
+
+      <div class="comment"><p>[...] The mixing can be better. So can my vocals. But I tried my best. I&#8217;ve uploaded 3 versions, with version 1.3 being the latest (was trying out the Normalisation/ Compression/ Amplify settings in Audacity and some new plugins, like this one). [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2233">
+
+      <cite><a href='http://myrightbrain.wordpress.com/' rel='external nofollow' class='url'>Ivan Chew</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2233" title="">October 11th, 2009 at 4:05</a> </small>
+
+      <div class="comment"><p>Hi Chris, I&#8217;m not saying anything that you&#8217;ve not heard already but I thought I should leave a comment to thank you for sharing this. I&#8217;ve been trying to get hold of a free and decent compression/ expander plug-in. Yours is a real boon. Much appreciated.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2234">
+
+      <cite>Ed</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2234" title="">October 19th, 2009 at 12:39</a> </small>
+
+      <div class="comment"><p>Chris,<br />
+I tried the plugin with Audacity 1.2.6 on a 6 hour file (voice recordings) and got an application error.</p>
+<p>I then tried the standalone application on my XP system with the latest .NET 3.5 and got an &#8220;Index was outside the bounds of the array&#8221;.</p>
+<p>The debug info follows.  Any thoughts?</p>
+<p>See the end of this message for details on invoking<br />
+just-in-time (JIT) debugging instead of this dialog box.</p>
+<p>************** Exception Text **************<br />
+System.IndexOutOfRangeException: Index was outside the bounds of the array.<br />
+   at Compressor.Parabaloid.SolveFor(PointF p1, PointF p2)<br />
+   at Compressor.Sound.c__DisplayClass23.b__22(Int64 i)<br />
+   at Compressor.Sound.Evaluate(Int64 sample)<br />
+   at Compressor.Compressor.c__DisplayClass7.b__6(Int64 i)<br />
+   at Compressor.Compressor.Compress(Stream fileIn, Stream fileOut, Func`3 status)<br />
+   at Compressor.Compressor.Compress(Stream fileIn, Stream fileOut, Progress progressForm, String status1)<br />
+   at Compressor.MainForm.Compress(Progress p)<br />
+   at Compressor.MainForm.c__DisplayClass28.b__26()</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2235">
+
+      <cite>Ed</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2235" title="">October 20th, 2009 at 9:09</a> </small>
+
+      <div class="comment"><p>Chris,<br />
+I should also reference the details of the problem I&#8217;m having with the plugin.  The good news is that Koz&#8217;s help solved the application error:</p>
+<p><a href="http://forum.audacityteam.org/viewtopic.php?f=12&amp;t=14576" rel="nofollow">http://forum.audacityteam.org/viewtopic.php?f=12&amp;t=14576</a></p>
+</div>
+    </div>
+
+  
+    <div id="comment-2240">
+
+      <cite>Trahcwolf</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2240" title="">November 5th, 2009 at 10:36</a> </small>
+
+      <div class="comment"><p>I like the idea behind the program, yet when I click to download the Audacity plugin, there&#8217;s a screen of words instead of a download link.<br />
+Certainly that&#8217;s the program, yet I have no clue how to make a screen full of words become a plugin.  Help for idiots like me would be greatly appreciated.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2241">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2241" title="">November 5th, 2009 at 13:46</a> </small>
+
+      <div class="comment"><p>Trachwolf, all that&#8217;s necessary is to right-click on the &#8220;plugin source&#8221; link and select &#8220;save target as&#8221; and then browse to the directory in the instructions and save it there.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2242">
+
+      <cite>Trahcwolf</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2242" title="">November 5th, 2009 at 14:42</a> </small>
+
+      <div class="comment"><p>OK<br />
+Got it<br />
+Downloaded Audacity 1.3.9, installed this plugin and it shows up<br />
+Quite nice graph<br />
+Looks great, but I am a technical dunce<br />
+Any help files for idiots to use it?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2243">
+
+      <cite>Gabriel</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2243" title="">November 22nd, 2009 at 10:32</a> </small>
+
+      <div class="comment"><p>This plugin seems like exactly what I need, but I am not having any luck installing it to work with Audacity (1.3.9) on a Mac running 10.5.8.  I notice that almost all the plugins in both the &#8220;plugin&#8221; and &#8220;nyquist&#8221; directories under Audacity end in .ny or .lsp.  Do I need to change the filename when I put it in one of these directories?  The plugin downloads as compress.ny.txt for me.  Thanks!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2244">
+
+      <cite>pdf23ds</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2244" title="">November 22nd, 2009 at 14:07</a> </small>
+
+      <div class="comment"><p>Gabriel, yes. Internet Explorer sucks. I will make a note in my post.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2249">
+
+      <cite>saiphai</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2249" title="">December 13th, 2009 at 19:33</a> </small>
+
+      <div class="comment"><p>GREAT plug-in! The default compressor in Audacity is very lackluster, making me to go though a long process for each track. Yours is much easier to use, faster, and give me much better results without constant tweaking of the parameters. And you&#8217;re completely right about the realtime compressors. Yours works much better on signal spikes cause by percussion. Thanks a bunch!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2251">
+
+      <cite><a href='http://realurl.org/twitted.php?id=6715499372' rel='external nofollow' class='url'>Twitted by digiSal</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2251" title="">December 21st, 2009 at 15:05</a> </small>
+
+      <div class="comment"><p>[...] This post was Twitted by digiSal [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2252">
+
+      <cite>Solo</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2252" title="">January 7th, 2010 at 2:35</a> </small>
+
+      <div class="comment"><p>Saweet!!!!  Great plugin!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2253">
+
+      <cite>Mary</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2253" title="">January 15th, 2010 at 12:19</a> </small>
+
+      <div class="comment"><p>This is just what I need! Unfortunately, each time I run the compression, Audacity (1.3 beta) crashes. Any suggestions?<br />
+Many thanks,<br />
+Mary</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2254">
+
+      <cite>Lee</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2254" title="">January 18th, 2010 at 19:34</a> </small>
+
+      <div class="comment"><p>This is a great plugin, however, Audacity 1.3 beta tends to crash when running &#8216;Compress dynamics&#8217; on very long music files (greater than 60 minutes).  Is there a fix/update?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2255">
+
+      <cite>Lee</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2255" title="">January 18th, 2010 at 19:39</a> </small>
+
+      <div class="comment"><p>This is the terminal generated output; I&#8217;m running Ubuntu 9.10 64-bit</p>
+<p>ERROR: Could not find sinewave.raw in rawwaves. Something is wrong with the installation or configuration.</p>
+<p>; loading &#8220;/usr/share/audacity/nyquist/init.lsp&#8221;<br />
+SETDIR: No such file or directory<br />
+Set *default-sf-dir* to &#8220;/home/xxx&#8221; in fileio.lsp<br />
+AutoNorm feature is on.<br />
+Default sound file is xxx-temp.wav.<br />
+system.lsp : *RUNTIME-PATH* = /usr/share/audacity/nyquist/  </p>
+<p>Nyquist &#8212; A Language for Sound Synthesis and Composition<br />
+    Copyright (c) 1991,1992,1995,2007-2009 by Roger B. Dannenberg<br />
+    Version 3.03</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2261">
+
+      <cite>Russell Wood</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2261" title="">January 27th, 2010 at 4:12</a> </small>
+
+      <div class="comment"><p>I&#8217;m slowly converting all my old LPs to digital, using Audacity. My old DGG/Karajan version of Dvorak&#8217;s &#8216;New World&#8217; has HUGE swings in volume. Thanks to your dynamic compressor, it&#8217;s now listenable without noise-cancelling headphones! Thanks!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2264">
+
+      <cite><a href='http://forum.audacityteam.org/' rel='external nofollow' class='url'>Steve D</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2264" title="">February 3rd, 2010 at 16:11</a> </small>
+
+      <div class="comment"><p>@Lee<br />
+Nyquist (in Audacity) was not fully compatible with Linux 64. This should be fixed in the current 1.3.11 version.</p>
+<p>If you are not wanting to build Audacity from source, Daily builds for Ubuntu are available here: <a href="https://launchpad.net/~audacity-team/+archive/daily" rel="nofollow">https://launchpad.net/~audacity-team/+archive/daily</a></p>
+<p>Also, Audacity currently keeps the sound file in memory while processing, so processing very large files can exhaust the computers available RAM.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2270">
+
+      <cite><a href='http://herdingcode.com/?p=238' rel='external nofollow' class='url'>Herding Code 72: Questioning Uncle Bob, Clojure Magic, Mercurial Support at Codeplex, Thoughts About the iPad and Handerpants | Herding Code</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2270" title="">February 6th, 2010 at 19:26</a> </small>
+
+      <div class="comment"><p>[...] Chris&#8217;s Dynamic Compressor [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2272">
+
+      <cite>Lee</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2272" title="">February 9th, 2010 at 8:21</a> </small>
+
+      <div class="comment"><p>Installed Audacity 1.3.11 in Karmic 64 bit (from the launchpad repository) and all is now quite well&#8230;there seems to be quite a bit less memory usage, too.  Thanks!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2273">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2273" title="">February 15th, 2010 at 20:00</a> </small>
+
+      <div class="comment"><p>I think I may need to change one of the settings on Compressor.  </p>
+<p>I have been getting fresh clips with slightly high background hum level.  When I listen with no processing, I don&#8217;t notice it, but Compressor digs too far down in the work to bring the show volume up and the hum is much more apparent after processing, particularly in the pauses between dialog.</p>
+<p>Koz<br />
+Audacity Forum Elf</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2275">
+
+      <cite>Koz</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2275" title="">March 8th, 2010 at 16:28</a> </small>
+
+      <div class="comment"><p>Since you&#8217;re so terrific at separating and managing sound levels within a performance, I wonder how hard it would be to not change the performance volume and dynamics at all and gently drop the room noise or background trash between words.  I wonder if maybe it couldn&#8217;t be done with the existing tools&#8230;</p>
+<p>Koz</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2278">
+
+      <cite>Jeff</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2278" title="">March 15th, 2010 at 18:10</a> </small>
+
+      <div class="comment"><p>I&#8217;m using Audacity 1.2.6 and whenever I try to run the compressor (on a 30 second voice clip) Audacity stops responding.  Is there a known fix for this or is the problem on just my end?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2280">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2280" title="">March 18th, 2010 at 7:38</a> </small>
+
+      <div class="comment"><p>Koz, for a signal with a background hum, have you tried my &#8220;Noise gate falloff&#8221; setting? Setting the floor appropriately and setting the falloff high enough should help with that.</p>
+<p>Jeff, does trying my plugin version 1.2.4 help at all?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2282">
+
+      <cite>toddboyle</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2282" title="">March 20th, 2010 at 16:23</a> </small>
+
+      <div class="comment"><p>Thanks for such a cool tool!!  I record long lectures. They quite often have unacceptable variations in level.  Speaker movement, house engineer changing the level on my feed, etc.etc.    HOWEVER!!   It dies at 30 minutes, on my computer, will check back from time to time hoping for a fix. I can&#8217;t dare to chop up the source soundtrack into small pieces, it would break the sync. with the video.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2283">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2283" title="">March 21st, 2010 at 1:12</a> </small>
+
+      <div class="comment"><p>Hi todd, I&#8217;d like to help get you working. I can apply my plugin to very long tracks on my machine. I&#8217;ve e-mailed you with some questions. Note that applying my compressor to a selected part of an audacity track doesn&#8217;t change the timing at all, so you can just select the different parts of your track and apply the compressor to each one to work around this problem.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2284">
+
+      <cite><a href='http://aaronsiirila.com/2010/03/25/open-source-software-im-using/' rel='external nofollow' class='url'>Open Source Software I&#8217;m Using &laquo; Aaron Siirila</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2284" title="">March 25th, 2010 at 12:00</a> </small>
+
+      <div class="comment"><p>[...] also recommend downloading Chris&#8217;s Compressor, which is a great plugin that allows you to automatically control the dynamic intensity in your [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2287">
+
+      <cite><a href='http://nowhere.yet/' rel='external nofollow' class='url'>wmba dams</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2287" title="">April 1st, 2010 at 10:06</a> </small>
+
+      <div class="comment"><p>right on &#8211;<br />
+i bought an outboard compressor for my stereo to play cds better &#8212;-</p>
+<p>the loud sounds wake the baby nextdoor<br />
+the low sounds are hidden underneath the trucks outside &#8212;-</p>
+<p>with a 30db max range now i can finally enjoy classical music at home </p>
+<p>it would be great to have a compressor that can do that do my recordings too so i can play them anywhere </p>
+<p>and if i could get rid of that annoying click when the compressor goes from very low to very high that would be a plus</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2288">
+
+      <cite>speedball</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2288" title="">April 1st, 2010 at 10:11</a> </small>
+
+      <div class="comment"><p>got any pointers to references to texts or papers on<br />
+theory about compressors that guided you?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2289">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2289" title="">April 1st, 2010 at 12:13</a> </small>
+
+      <div class="comment"><p>I didn&#8217;t read anything to guide me. I started out by noticing that normalizing was worthless, and trying to use the envelope function to manually remove some of the high peaks before normalizing. After doing this for a few hours, I got a feel for some of the effective techniques, and I decided to try to automate them. I was already an experienced programmer, and I happened to know the audacity extension language, so this turned out to be not terribly hard.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2290">
+
+      <cite><a href='http://www.doeft.com/' rel='external nofollow' class='url'>Kim</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2290" title="">April 17th, 2010 at 13:30</a> </small>
+
+      <div class="comment"><p>Chris,</p>
+<p>Just wanted to say &#8216;THANK YOU&#8217; so much for this plug-in.  I was doing it the hard way on recorded radio shows, manually picking voices I wanted to increase.  Wish I had known about this earlier.  Your a true value to everyone ; )</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2293">
+
+      <cite><a href='http://theramennoodle.com/' rel='external nofollow' class='url'>the Ramen Noodle</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2293" title="">May 9th, 2010 at 7:57</a> </small>
+
+      <div class="comment"><p>Chris, I love your compressor and I think I&#8217;m one of the few professional podcasters who use it. But I think the simplification is nice for beginners, but I liked the extra power all of the controls gave me.</p>
+<p>Would you please consider re-adding the advanced features, perhaps by a button that can switch between advanced and simple. Is the &#8220;hardness&#8221; equivalent to the attack release options before? What is the new exponent in the simplified settings?</p>
+<p>The one other thing I think your plugin desperately needs is a way to save presets, or at least remember my previously used settings between Audacity reboots.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2294">
+
+      <cite><a href='http://kozco.com/' rel='external nofollow' class='url'>Koz</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2294" title="">May 9th, 2010 at 22:42</a> </small>
+
+      <div class="comment"><p>You don&#8217;t have to change the new version.  Just post links to the old one.  We&#8217;ll send people one way or the other depending on their needs.<br />
+Thanks,<br />
+Koz<br />
+Audacity Forum Elf.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2295">
+
+      <cite><a href='http://theramennoodle.com/' rel='external nofollow' class='url'>the Ramen Noodle</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2295" title="">May 10th, 2010 at 10:35</a> </small>
+
+      <div class="comment"><p>What happens when Chris updates the Compressor in more than just the interface? The old version would be skipped.</p>
+<p>I still think it&#8217;s best to offer &#8220;Simple&#8221; and &#8220;Advanced&#8221; options in the plugin, which would help Chris have to maintain only one source.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2296">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2296" title="">May 10th, 2010 at 15:45</a> </small>
+
+      <div class="comment"><p>Ramen: please look in the source of the plugin for instructions on how to re-enable the advanced features. (You just comment out some lines and uncomment others.) The tutorial mentions this, so hopefully new users will be able to find out about them. I would definitely make it a button to switch, but I have very little control over the parameters screen. I basically just set the parameter name and ranges, and I can&#8217;t do anything else.</p>
+<p>The hardness adjusts the two width settings in sync, on a x^2 scale. The exponents just stay at the defaults.</p>
+<p>You can get to any old version by the following scheme:</p>
+<p><a href="../../projects/compressor/compress-1.X.Y.html" rel="nofollow">http://pdf23ds.net/projects/compressor/compress-1.X.Y.ny</a> (e.g. compress-1.2.5.ny).</p>
+<p>BTW, 1.2.6 doesn&#8217;t change the compressor algorithm. Results with the default settings should be identical.</p>
+<p><i>The one other thing I think your plugin desperately needs is a way to save presets, or at least remember my previously used settings between Audacity reboots.</i></p>
+<p>Huh. That really sucks. Someone should bug the audacity developers to get that fixed. Unfortunately (due to the limited control I have on the parameters screen) I can&#8217;t fix it.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2297">
+
+      <cite><a href='http://theramennoodle.com/' rel='external nofollow' class='url'>the Ramen Noodle</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2297" title="">May 10th, 2010 at 17:15</a> </small>
+
+      <div class="comment"><p>Oh. I guess I had assumed too much. I&#8217;m using the latest beta, which finally supports GUI for plugins.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2298">
+
+      <cite><a href='http://theramennoodle.com/' rel='external nofollow' class='url'>the Ramen Noodle</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2298" title="">May 14th, 2010 at 8:51</a> </small>
+
+      <div class="comment"><p>Chris,</p>
+<p>I&#8217;m about to launch a podcast about podcasting and Audacity will be strongly featured. Please email me because I would love to record an interview sometime.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2299">
+
+      <cite><a href='http://realsoonnow.tv/' rel='external nofollow' class='url'>speedball</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2299" title="">May 14th, 2010 at 16:52</a> </small>
+
+      <div class="comment"><p>i think the old version would be better<br />
+cant you put both options in one<br />
+diddle one parameter if you like simple<br />
+let it change the others<br />
+or<br />
+change all the parameters individually</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2301">
+
+      <cite><a href='http://forum.audacityteam.org/' rel='external nofollow' class='url'>stevethefiddle</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2301" title="">May 22nd, 2010 at 6:17</a> </small>
+
+      <div class="comment"><p>&lt;&lt;&gt;&gt;</p>
+<p>&lt;&lt;&gt;&gt;</p>
+<p>&lt;&lt;&gt;&gt;</p>
+<p>Thanks for pointing these things out. I&#8217;ve passed the information on to the folk at the Audacity forum.</p>
+<p>I like the new simplified interface though I would personally prefer to have separate controls for attack and release rather than the combined &#8220;hardness&#8221;. Could this perhaps be a happy compromise between the old and new interfaces?</p>
+<p>Do you have any plans to make this plug-in GPL compatible?<br />
+I&#8217;d really like to try and get this effect included in the Audacity download bundle, but that is currently prohibited by the licensing terms. You would of course still be credited as the author of the plug-in and it is common for plug-in authors to have their name/website listed at the top of the GUI.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2302">
+
+      <cite><a href='http://forum.audacityteam.org/' rel='external nofollow' class='url'>stevethefiddle</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2302" title="">May 22nd, 2010 at 6:21</a> </small>
+
+      <div class="comment"><p>I was trying to quote three points from the post &#8220;pdf23ds May 10th, 2010 at 15:45&#8243; but the quotes have been stripped out and there&#8217;s no way for me to edit the post.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2303">
+
+      <cite><a href='http://forum.audacityteam.org/' rel='external nofollow' class='url'>stevethefiddle</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2303" title="">May 22nd, 2010 at 6:47</a> </small>
+
+      <div class="comment"><p>Is there any reason why the Release Speed is before the Attack Speed when the advanced controls are enabled? It&#8217;s no big deal, but it just looks backward.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2304">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2304" title="">May 22nd, 2010 at 7:53</a> </small>
+
+      <div class="comment"><p>Steve, I&#8217;m not sure exactly what you typed in to do the quotes, but on blog comments (especially wordpress and typepad) it&#8217;s generally a good idea to stay away from using angle brackets too much. They often get messed up, especially if you don&#8217;t surround them with spaces. For quoting try using &lt;i&gt;text&lt;/i&gt; or &lt;blockquote&gt;. phpBB and blogger are good about angle brackets though.</p>
+<p>If you don&#8217;t want to show the exponent parameters, you can just refrain from uncommenting those (i.e. ignore the second &#8220;advanced parameters&#8221; section in the source code) and it&#8217;ll do the expected thing.</p>
+<p>Did I switch the order of release/attack speed at some point? I don&#8217;t remember doing so. Have they been backwards the whole time? Oh, yes. I renamed them from rise/fall. I guess I could switch them.</p>
+<p>I&#8217;ll think about the licensing.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2307">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2307" title="">May 26th, 2010 at 9:20</a> </small>
+
+      <div class="comment"><p>Hmm. I&#8217;ve been thinking. Maybe now that I&#8217;ve renamed my attack/release to the more traditional thing, it might be fine to leave them exposed by default, and make the advanced settings the exponent settings.</p>
+<p><i>I’m using the latest beta, which finally supports GUI for plugins.</i></p>
+<p>Linky?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2311">
+
+      <cite><a href='http://underlore.com/' rel='external nofollow' class='url'>Brandon M. Sergent</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2311" title="">June 13th, 2010 at 0:30</a> </small>
+
+      <div class="comment"><p>Outstanding work. I&#8217;ve stumbled it. Thank you VERY much! If you want to really challenge your app try this on the batman begins soundtrack. :) I plan to here shortly.</p>
+<p>As for normalizing voices in a podcast, this plugin is peerless.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2315">
+
+      <cite><a href='http://www.noodle.mx/' rel='external nofollow' class='url'>the Ramen Noodle</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2315" title="">July 1st, 2010 at 20:55</a> </small>
+
+      <div class="comment"><p>Sorry for taking so long to reply. I&#8217;ve been launching a podcast network. :P</p>
+<p>You haven&#8217;t tried Audacity 1.3 beta? It&#8217;s available from the main Audacity page:</p>
+<p><a href="http://audacity.sourceforge.net/" rel="nofollow">http://audacity.sourceforge.net/</a></p>
+</div>
+    </div>
+
+  
+    <div id="comment-2317">
+
+      <cite><a href='http://www.noodle.mx/the-audacity-to-podcast/tap004/' rel='external nofollow' class='url'>TAP004: Live-Podcasting Q&amp;A | Noodle.mx</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2317" title="">July 8th, 2010 at 15:15</a> </small>
+
+      <div class="comment"><p>[...] Chris&#8217;s Dynamic Compressor for Audacity or Levelator for any audio [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2318">
+
+      <cite><a href='http://underlore.com/' rel='external nofollow' class='url'>Brandon M. Sergent</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2318" title="">July 27th, 2010 at 22:11</a> </small>
+
+      <div class="comment"><p>Are you going to update the stand alone version? I get an error &#8220;System.Exception: Really long riff subchunk before data.&#8221;</p>
+<p>Thank you for taking the tie to make this.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2319">
+
+      <cite><a href='http://clinuxera.org/odaibanet/2010/08/on-155-integradores-gandallas-platica-con-armando-mucino/' rel='external nofollow' class='url'>ON 155 Integradores gandallas, plática con Armando Muciño | Odaiba Net</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2319" title="">August 19th, 2010 at 7:57</a> </small>
+
+      <div class="comment"><p>[...] Audacity para grabar podcasts, y comprimir el rango dinámico con Compress Dynamics [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2320">
+
+      <cite>anonymous</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2320" title="">August 22nd, 2010 at 10:13</a> </small>
+
+      <div class="comment"><p>Is the standalone version 1.2.1 known to be defective under Windows 7??</p>
+<p>I am guessing it is. My attempts to compress WAVs appear to succeed without errors, but playback of resulting files is at about 10 times normal speed&#8211;sounds like a high speed scan. This same behavior found on multiple tests.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2321">
+
+      <cite>pdf23ds</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2321" title="">August 22nd, 2010 at 15:14</a> </small>
+
+      <div class="comment"><p>anonymous: Make sure your input files are in 44.1 kHz stereo format. If they&#8217;re in a lower sample-rate, it would cause that symptom. Also, if they&#8217;re mono files, not stereo, I think it might cause that symptom. Ideally my program could handle other formats correctly, but it doesn&#8217;t, sorry. I doubt it has anything to do with Windows 7.</p>
+<p>You know, I should really parse more of the RIFF header, so I could at the very least show an error message for an unsupported file. And it would fix Brandon&#8217;s problem too.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2322">
+
+      <cite>pdf23ds</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2322" title="">August 22nd, 2010 at 15:16</a> </small>
+
+      <div class="comment"><p>The audacity plugin, of course, doesn&#8217;t have any of those limitations.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2323">
+
+      <cite><a href='http://underlore.com/' rel='external nofollow' class='url'>Brandon M. Sergent</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2323" title="">August 22nd, 2010 at 16:19</a> </small>
+
+      <div class="comment"><p>@pdf23ds</p>
+<p>The plugin force me to down sample the mp3s (import then export), the stand alone app does not, also it works in batch. BIG deal for me.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2324">
+
+      <cite><a href='http://underlore.com/' rel='external nofollow' class='url'>Brandon M. Sergent</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2324" title="">August 22nd, 2010 at 16:49</a> </small>
+
+      <div class="comment"><p>Now I have the incorrect rate error. In the future I&#8217;ll record them with the proper setting but now I need to convert a whole lot of files.</p>
+<p>Can you recommend a good app for converting a bunch of mono mp3s to stereo and correcting the sample rate?</p>
+<p>I&#8217;m using this to level the voices in a group recording.</p>
+<p>Audacity not surprisingly lacks these functionalities as batch.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2325">
+
+      <cite><a href='http://underlore.com/' rel='external nofollow' class='url'>Brandon M. Sergent</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2325" title="">August 22nd, 2010 at 17:15</a> </small>
+
+      <div class="comment"><p>Update: Mediacoder did the job of converting but I had another issue, I have emailed you full details.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2326">
+
+      <cite>Anonymous</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2326" title="">September 2nd, 2010 at 22:57</a> </small>
+
+      <div class="comment"><p>This works great on music!  What settings would you recommend for speech?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2327">
+
+      <cite>Gabriel</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2327" title="">September 15th, 2010 at 11:11</a> </small>
+
+      <div class="comment"><p>Thanks, I am now trying the 2.6 version now that a later version had the long audio files cut to half.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2330">
+
+      <cite><a href='http://weblogs.asp.net/jgalloway' rel='external nofollow' class='url'>Jon Galloway</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2330" title="">September 28th, 2010 at 22:52</a> </small>
+
+      <div class="comment"><p>re: licensing, isn&#8217;t it possible to dual license the code? It&#8217;s your code so you can release it under whatever licenses you like, and a lot of software is dual-licensed.</p>
+<p>Thanks for writing and publishing such an awesome plugin. I use it quite a lot, and really appreciate your work.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2331">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2331" title="">September 29th, 2010 at 0:01</a> </small>
+
+      <div class="comment"><p>I just added a link to a modified version of 1.2.6 that already has the advanced controls enabled, so people who want those don&#8217;t have to mess with the file.</p>
+<p>Jon, I&#8217;m not sure what dual-licensing accomplishes when one of the licenses is GPL. In any case, I doubt I will ever even try to make money off of this, so I&#8217;ll probably put it under the GPL one of these days, when I get around to it.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2347">
+
+      <cite>Gordon</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2347" title="">October 15th, 2010 at 14:10</a> </small>
+
+      <div class="comment"><p>I receive the error &#8220;Nyquist did not return audio&#8221; on your advanced version: <a href="../../projects/compressor/compress-adv.ny" rel="nofollow">http://pdf23ds.net/projects/compressor/compress-adv.ny</a> in 1.2.6 in Audacity 1.3.12 on Win7 x64 Pro.  I get this problem no matter what settings I choose.  How can I get around this?  It looks like a great plugin, and I really need more options for a compressor than what is offered by default by Audacity.</p>
+<p>P.S., I&#8217;m a programmer, but I have not written Audacity plugins before.  What IDE/editor do you use for them?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2348">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2348" title="">October 15th, 2010 at 18:23</a> </small>
+
+      <div class="comment"><p>Yeah, that&#8217;s what I get for not testing the stupid thing. (Integer division should have been float division.) Try the same link again.</p>
+<p>There&#8217;s really no great environment for developing audacity plugins. You could try the Nyquist environment, but it&#8217;s pretty primitive. It maps pretty well with Audacity (since Audacity uses Nyquist as the engine for those plugins). I never did use it though. I just used my favorite programmer&#8217;s text editor and used lots of debug output to files and such. I already knew Lisp from using a lot of Common Lisp. For that I used SBCL/Emacs/Slime (on Linux).</p>
+<p>When I wrote version 2 of the plugin I actually wrote it in C# 2 with Visual Studio first, and then converted the algorithm back to XLisp. It would have been much harder otherwise. VS has recompile-as-you-go and a good debugger and GUI libraries to display graphs of debugging information. (When writing version 1 I actually used gplot and file output from audacity.)</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2349">
+
+      <cite>Al</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2349" title="">October 18th, 2010 at 6:28</a> </small>
+
+      <div class="comment"><p>I&#8217;m really confused. Not so much by the math, but by what to do.</p>
+<p>First, I downloaded the plugin version and couldn&#8217;t figure out how to activate it. I went to Effect &gt; Compressor and clicked on Compressor and what came up was Dynamic Range Compressor by Dominic Mazzoni. Is this you?</p>
+<p>So, then I tried the stand alone. I have Windows 7, so wasn&#8217;t sure if I should even try to use this one. I&#8217;m not sure what to do with it anyway.</p>
+<p>I&#8217;ve read through the main page and the tutorial and I still don&#8217;t know what to do. None of the tutorial text and the Chris&#8217;s dynamic compressor GUI seem to have terms in common. I see Compression level:, Noise floor:, Release speed, Release exponent, Attack speed, Attack exponent, and Renormalization factor: as things I can adjust, but don&#8217;t find any reference to any of those titles in the tutorial. I was hoping for: to get this effect, slide this bar until it reads x.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2350">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2350" title="">October 18th, 2010 at 11:28</a> </small>
+
+      <div class="comment"><p>Al: The Effects menu has two sections separated by a horizontal bar. Plugins show up in the bottom section. (In some versions of Audacity there&#8217;s a submenu called &#8220;Plugins&#8221;.) My entry says &#8220;Compress dynamics&#8230;&#8221;.</p>
+<p>Yeah, I really do need to make the two have consistent terminology. The GUI doesn&#8217;t have much help in there either. I should work on that. In the meantime, here&#8217;s how they correspond:</p>
+<p>release speed = release time<br />
+attack speed = attack time<br />
+compression level = compress ratio<br />
+noise floor = floor<br />
+renormalization = maximum amplitude<br />
+noise gate falloff isn&#8217;t in the windows version</p>
+<p>Practically speaking, the defaults in either plugin should work just fine. If you want to change something, most of the time all you need to change is the first parameter, the compress ratio or compression level. Everything else is just for tweaking the result.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2351">
+
+      <cite>Zo</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2351" title="">October 31st, 2010 at 16:17</a> </small>
+
+      <div class="comment"><p>Hello there, downloaded the Newest Beta version 1.2.7, of it to my Win XP Pro PC, but it does not know what program to use to open it, I have the latest .NetFramework installed too. I Was able to download and install the older 1.2.6 version of it though, I am still learning about all these very cool Plugins can use like this, but my question is: when I install them, should I install all Plug ins into Audacity Beta Unicode Plugin Folder since I am using the Beta version, or just the regular Audacity Plugin folder that I also see on my Cdrive, does it matter? Tried both, but when I restart Audacity Beta, do not see them in My Effects screen, only the built in Audacity Compressor or plug ins etc??</p>
+<p>Also I tried searching Chris&#8217;s Compressor Program more on how to use to Batch process all my Mp3 Playlists in their Existing order in Itunes 10 (Approx 2,200 songs only) to Same, best Amplified Peak Levels without trimming, would like to do all of them at one time in the new Audacity 1.3.12 Beta, still unsure if have to painstakenly do one song at a time, or could set a specific peak level to sync all existing and newly added songs together in my Itunes playlists? Please advise if you can advise anything Suggestions at all.<br />
+Much appreciated and thanks for your time!!!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2353">
+
+      <cite>D.D</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2353" title="">November 6th, 2010 at 16:26</a> </small>
+
+      <div class="comment"><p>Hi there ! Thanks for your for creating this beautiful plug-in. Work beautiful. I have one question when i listen songs with louder and stronger voice or vocal did i must change something in the basic preference because i think the sound drops suddenly when singing and the peak levels of the voice are cuts ?</p>
+<p>Best Regards<br />
+D.D</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2354">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2354" title="">November 6th, 2010 at 18:14</a> </small>
+
+      <div class="comment"><p>D.D: If you downloaded the beta version 1.2.7, you should disable the &#8220;Compress bright sounds&#8221; option. If that option is not there or is disabled, I don&#8217;t know what the problem could be.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2355">
+
+      <cite>D.D</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2355" title="">November 7th, 2010 at 4:59</a> </small>
+
+      <div class="comment"><p>Hi there no it was enable or 1 in the default value. I need to disable it or value 0 right ? and when i change it to 0 the sound has no major difference ?</p>
+<p>BEst REgards<br />
+D.D</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2356">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2356" title="">November 7th, 2010 at 16:05</a> </small>
+
+      <div class="comment"><p>Version 1.2.7 is an audacity plugin. You don&#8217;t open it directly. Audacity, and my audacity plugin, do not use the .NET framework.</p>
+<p>Audacity&#8217;s batch processing, unfortunately, does not support my plugin, or any nyquist plugins. My .NET version allows for batch processing. You will probably want to use this one.</p>
+<blockquote><p>should I install all Plug ins into Audacity Beta Unicode Plugin Folder since I am using the Beta version,</p></blockquote>
+<p>Yes.</p>
+<blockquote><p>Tried both, but when I restart Audacity Beta, do not see them in My Effects screen, only the built in Audacity Compressor or plug ins etc??</p></blockquote>
+<p>You should see it. I don&#8217;t know why you aren&#8217;t. It&#8217;s down in the bottom half of the menu, and it says &#8220;Compress dynamics&#8230;&#8221;.</p>
+<blockquote><p>Also I tried searching Chris’s Compressor Program more on how to use to Batch process all my Mp3 Playlists in their Existing order in Itunes 10 (Approx 2,200 songs only)</p></blockquote>
+<p>Run Compressor.exe from the Compressor-dotnet.zip zip file. (Also get LAME.) Drag the folder with all your MP3 files over into it. </p>
+<p>This process is not very streamlined yet. It might not be accessible to unskilled computer users yet.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2357">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2357" title="">November 11th, 2010 at 17:10</a> </small>
+
+      <div class="comment"><p>D.D., right, change it to 0. I e-mailed you but haven&#8217;t heard back.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2358">
+
+      <cite>D.D</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2358" title="">November 12th, 2010 at 19:10</a> </small>
+
+      <div class="comment"><p>hi there please forward the message again i didn&#8217;t receive or got in the spam list and got delete please send it again will check it later</p>
+<p>Best Regards<br />
+D.D</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2359">
+
+      <cite><a href='http://techtoinks.com/compressing-music-for-in-car-listening-ask-jack.html' rel='external nofollow' class='url'>Compressing music for in-car listening | Ask Jack | Tech Toinks!</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2359" title="">December 9th, 2010 at 10:01</a> </small>
+
+      <div class="comment"><p>[...] I reckon your best bet is Chris&#8217;s Dynamic Compressor, which is sometimes called &#8220;Chris&#8217; compressor&#8221;. Chris Capel had exactly the same [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2360">
+
+      <cite>D.D</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2360" title="">December 9th, 2010 at 12:42</a> </small>
+
+      <div class="comment"><p>Hi there i figured it out. Thank you so much for this plug in. Thank you !</p>
+<p>Best Regards<br />
+D.D</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2361">
+
+      <cite><a href='http://technology.freshcontentengine.com/compressing-music-for-in-car-listening/' rel='external nofollow' class='url'>Compressing music for in-car listening | Technology News And Interesting Articles</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2361" title="">December 9th, 2010 at 14:46</a> </small>
+
+      <div class="comment"><p>[...] I reckon your best bet is Chris&#8217;s Dynamic Compressor, which is sometimes called &#8220;Chris&#8217; compressor&#8221;. Chris Capel had exactly the same [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2362">
+
+      <cite>Jeffrey L. Johnson</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2362" title="">December 9th, 2010 at 19:54</a> </small>
+
+      <div class="comment"><p>Dear Mr. Capel:</p>
+<p>Thank you so very much for making your dynamic compressor and for making it available.  I was listening to a piece of choral music which contained a very loud finale, which drove my little cheapo speakers into severe distortion.  I knew I needed a dynamic compressor and I found your site.   I downloaded you Windows plugin for Audacity, which I use mainly for a MP3 recorder, transposer, and tempo adjuster.  I put your file into the folder with the other .ny files. Unfortunately I can find any instructions on usage.  Perhaps you could include a sentence or so covering this topic.</p>
+<p>Yours sincerely,</p>
+<p>Jeffrey L. Johnson</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2363">
+
+      <cite><a href='http://www.itechfeed.com/2010/12/compressing-music-for-in-car-listening/' rel='external nofollow' class='url'>Compressing music for in-car listening | iTechfeed.com</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2363" title="">December 10th, 2010 at 11:04</a> </small>
+
+      <div class="comment"><p>[...] I reckon your ideal bet is Chris&#8217;s Dynamic Compressor, which is sometimes called &#8220;Chris&#8217; compressor&#8221;. Chris Capel had exactly the same [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2364">
+
+      <cite><a href='http://www.billgators.info/?p=53' rel='external nofollow' class='url'>Compressing music for in-car listening | Ask Jack &laquo; Gat0rs</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2364" title="">December 12th, 2010 at 0:00</a> </small>
+
+      <div class="comment"><p>[...] I reckon your best bet is Chris&#8217;s Dynamic Compressor, which is sometimes called &#8220;Chris&#8217; compressor&#8221;. Chris Capel had exactly the same problem as you, so [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2368">
+
+      <cite>AEN</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2368" title="">December 22nd, 2010 at 6:12</a> </small>
+
+      <div class="comment"><p>22December2010<br />
+Greetings.<br />
+Steve @ Audacity ask me (at the forum thread link here»)<br />
+<a href="http://forum.audacityteam.org/viewtopic.php?f=28&amp;t=7010&amp;start=40" rel="nofollow">http://forum.audacityteam.org/viewtopic.php?f=28&amp;t=7010&amp;start=40</a><br />
+to post some feedback to you.<br />
+I have been using NCH WavPad 3.02a since 2006.  I also use Audacity now.  NCHWP has an audio effect called Automatic Gain Control.  It would be nice Audacity has a similar effect.  My comments at the above thread describe the effect &#8230;<br />
+Thank you.<br />
+Regards,<br />
+AEN<br />
+AE</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2369">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2369" title="">December 22nd, 2010 at 9:10</a> </small>
+
+      <div class="comment"><p>AEN, if you post a link to a before and after with the WavPad effect (or e-mail me one), I can tell you if the effect is possible with my plugin.</p>
+<p>Generally, to get a softer effect, you decrease the compression level, and decrease the compression hardness. If you&#8217;re not seeing a &#8220;compression hardness&#8221; parameter, then you&#8217;ve downloaded the advanced version, and you should increase the attack and release speeds. You can also try slightly lowering the exponent parameters.</p>
+<p>Try these settings: compression level 0.5, release speed 1500, attack speed 800, floor -24, release exponent 1.7. If the sound dips before peaks too much, lower the attack speed again. If you want to keep more of the overall dynamic range (i.e. the depth of the dips) then lower the compression level more. If you want to decrease the overall level of the result, try changing &#8220;renormalize&#8221; to .85.</p>
+<p>I should probably change &#8220;speed&#8221; to &#8220;time&#8221;. Conceptually, &#8220;raising the speed&#8221; would make the attack and release faster/harder, but raising those parameters makes them slower/softer.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2370">
+
+      <cite>Mark Hawkins</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2370" title="">December 24th, 2010 at 4:57</a> </small>
+
+      <div class="comment"><p>It may be that generally with a Mac things &#8220;just work&#8221; but I can&#8217;t get the plugin file ro work with Audacity 133 on my Mac running 10.4.11.</p>
+<p>Could you give a step by step guide for the thick please !</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2372">
+
+      <cite>Nick Garvey</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2372" title="">January 20th, 2011 at 14:04</a> </small>
+
+      <div class="comment"><p>Hi, I there a way I can use this with windows media player?<br />
+Regards,<br />
+Nick</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2373">
+
+      <cite><a href='http://clinuxera.org/odaibanet/on-155-integradores-gandallas-platica-con-armando-mucino/' rel='external nofollow' class='url'>ON 155 Integradores gandallas, plática con Armando Muciño</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2373" title="">January 21st, 2011 at 10:24</a> </small>
+
+      <div class="comment"><p>[...] Audacity para grabar podcasts, y comprimir el rango dinámico con Compress Dynamics [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2374">
+
+      <cite>Ricky</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2374" title="">January 27th, 2011 at 18:05</a> </small>
+
+      <div class="comment"><p>Thank you for your compressor! I have been trying to figure out how to get Audacity to do this and you have solved my problem. Thank you! I&#8217;m not a computer genius and I almost was not able to figure out how to install your 17k plug-in. But&#8230; I just found the Audacity folder, the plug in folder, and dropped it in. Then I started up Audacity and I thought I&#8217;d find something that said &#8220;Chris&#8217;s Compressor&#8221; which I didn&#8217;t see. I looked at your feedback and finally I saw that you call it &#8220;compress dynamics.&#8221; Well&#8230; it works GREAT! Thank you!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2376">
+
+      <cite><a href='http://www.harvey.co.uk/' rel='external nofollow' class='url'>Harvey Bowden</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2376" title="">February 4th, 2011 at 15:02</a> </small>
+
+      <div class="comment"><p>Hi, I have an iTunes collection of classical music in AIFF format which I listen to on hifi at home. When travelling I have copies in Apples lossless on iPods and iPhone.<br />
+I am getting deaf so the dynamic range is a problem when travelling as the loud is too loud when I turn the volume up to hear the quiet passages. So your description sounds perfect.<br />
+But, I am no computer buff and don&#8217;t want to spend hours learning how to batch process my 300GB of music.<br />
+Can I pay you to to compress a copy of my library for me?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2379">
+
+      <cite>Visarga</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2379" title="">February 6th, 2011 at 8:21</a> </small>
+
+      <div class="comment"><p>Chris, thank you for the software. I think it is the best Windows batch dynamic compressor. You obviously put a lot of thought into the algorithm.</p>
+<p>There is a problem with exporting mp3. It doesn&#8217;t work. Does nothing. I downloaded lame, put the lame link in the box, it didn&#8217;t work.</p>
+<p>Also, I want to ask you if ID3 tags are being preserved (mp3 input, mp3 output).</p>
+<p>If possible, add a menu of common setups (at least for low/medium/high dynamic compression settings).</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2381">
+
+      <cite><a href='../../index.html' rel='external nofollow' class='url'>pdf23ds</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2381" title="">February 6th, 2011 at 12:08</a> </small>
+
+      <div class="comment"><p>Visarga: The lame version required for the default arguments given to lame is 3.98. You can use older versions of lame if you remove the id3 tag option. Lame has no option to just copy over all the tags, so you&#8217;ll have to do that manually. I know it&#8217;s a pain. If anyone can suggest a program that will run from the command line that will copy tags, I will consider including it in my program. I use MP3Tag to copy the tags manually after compressing them. It makes the process pretty quick, and it supports iTunes songs too.</p>
+<p>I will consider adding a preset list. It isn&#8217;t supported by Audacity, but the Windows version could support it, I suppose.</p>
+<p>A Windows Media Player version is not available. It would require me learning quite a bit to make one, so it&#8217;s not going to happen any time in the foreseeable future, unless someone wants to contribute to a fund for me to write one.</p>
+<p>To install the plugin for Audacity on a Mac, you simply drop the .ny file into the /Applications/Audacity/plug-ins folder instead of C:\Program Files\Audacity\plug-ins.</p>
+<p>Harvey, I&#8217;ll e-mail you.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2387">
+
+      <cite><a href='http://giftsfromsky.wordpress.com/2011/02/17/sound-quality-editing/' rel='external nofollow' class='url'>Sound Quality Editing &laquo; Steam Origins: Gifts from the Sky</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2387" title="">February 17th, 2011 at 13:56</a> </small>
+
+      <div class="comment"><p>[...] Finally, had issues with to much volume variations throughout the podcast. When a high volume sentence was placed between two low volume sentences, the listener could tell one it was spliced in. After looking around the interwebs, I found a plugin. I copied and pasted it into Audicity to have a more fine-tuned control over compression (don&#8217;t ask me what it is, I just hear the difference). The one I downloaded was called Dynamic Compressor. It had alot of options, which were explained right there while you tweeked them. Overall, I was happy with its ease of use and effectiveness. I found this plugin in at <a href="index.html" rel="nofollow">http://pdf23ds.net/software/dynamic-compressor/</a>. [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2388">
+
+      <cite><a href='http://weiyu.la/landing' rel='external nofollow' class='url'>kiatlc</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2388" title="">February 23rd, 2011 at 12:38</a> </small>
+
+      <div class="comment"><p>Hi Chris, i have one question:</p>
+<p>Audacity&#8217;s default compressor after outputing, the db=0 whereas after output with your plugin, the db is uncertain. How to set so that after output with your plugin, the db=0 ?</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2389">
+
+      <cite><a href='http://www.itpowers.com/2010/12/09/compressing-music-for-in-car-listening/' rel='external nofollow' class='url'>Compressing music for in-car listening</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2389" title="">March 11th, 2011 at 4:20</a> </small>
+
+      <div class="comment"><p>[...] I reckon your best bet is Chris&#8217;s Dynamic Compressor, which is sometimes called &#8220;Chris&#8217; compressor&#8221;. Chris Capel had exactly the same [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2401">
+
+      <cite>Luke Allen</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2401" title="">April 13th, 2011 at 11:57</a> </small>
+
+      <div class="comment"><p>I&#8217;ve been turning the church sermon into a web download for a while using Audacity, but I had to spend 5-10 minutes on each 30-minute sermon manually dropping high peaks just to get it listenable.</p>
+<p>Now I can pre-process it in a few seconds on the church&#8217;s five-year-old single-CPU laptop.  Thank you so much!</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2403">
+
+      <cite>Dad</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2403" title="">April 22nd, 2011 at 6:24</a> </small>
+
+      <div class="comment"><p>I don’t know if anyone follows Chris&#8217;s blog in it&#8217;s entirety. It was one of the ways I tried to keep touch with how Chris’s life was going.  If you have read it, you know that Chris struggled with life.  </p>
+<p>Chris’s agony with living has ended. Sad does not begin to describe the emotion I feel.</p>
+<p>I hope you have peace now son.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2406">
+
+      <cite><a href='http://www.sixpackprograms.com/' rel='external nofollow' class='url'>six pack</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2406" title="">April 28th, 2011 at 22:15</a> </small>
+
+      <div class="comment"><p>why do you make people do math on your site? you suck. otherwise, you must think you are pretty smart, making open source software&#8230;</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2408">
+
+      <cite><a href='http://theaudacitytopodcast.noodle.mx/podcast/tap004-live-podcasting-questions-and-answers/' rel='external nofollow' class='url'>Live-Podcasting Questions and Answers</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2408" title="">May 7th, 2011 at 7:13</a> </small>
+
+      <div class="comment"><p>[...] Chris&#8217;s Dynamic Compressor for Audacity or Levelator for any audio [...]</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2411">
+
+      <cite>Michael</cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2411" title="">May 24th, 2011 at 12:40</a> </small>
+
+      <div class="comment"><p>I was so sorry to hear of Chris&#8217;s death and send my condolences to his family. Many of us have cause to be grateful to Chris for his work and I will remember him whenever I use his compressor.</p>
+</div>
+    </div>
+
+  
+    <div id="comment-2414">
+
+      <cite><a href='http://shreevatsa.wordpress.com/2011/05/21/making-audio-louder-with-audacity/' rel='external nofollow' class='url'>Making audio louder with Audacity &laquo; The Lumber Room</a></cite> says:
+
+            <br />
+
+      <small class="byline"><a href="#comment-2414" title="">June 9th, 2011 at 14:19</a> </small>
+
+      <div class="comment"><p>[...] &#8220;Chris&#8217;s dynamic compressor&#8221; from here (direct [...]</p>
+</div>
+    </div>
+
+    </div>
+
+
+
+
+  <h3 id="respond">Leave a Reply</h3>
+
+  
+    <form action="http://pdf23ds.net/wp-comments-post.php" method="post" id="commentform">
+
+  
+    <p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+    <label for="author"><small>Name </small></label></p>
+
+    <p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+    <label for="email"><small>Mail (will not be published)</small></label></p>
+
+    <p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+    <label for="url"><small>Website</small></label></p>
+
+    <p><input type="text" name="myverfield" id="verfield" size=”22" tabindex="4" />
+    <label for="myverfield"><small>The sum of 12 and 24. (required)</small></label></input></p>
+
+  
+  <!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+  <p><small>To include an em dash, use three hypens with no surrounding spaces, or two with surrounding spaces.</small></p>
+
+  <p><textarea name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea></p>
+
+  <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+  <input type="hidden" name="comment_post_ID" value="50" />
+</p>
+  
+</form>
+
+
+</div></div>
+
+<div id="sideBar">
+  <ul><li><a href="../../chriss-webspace/index.html"><img alt="My Photo" src="../../avatar.gif" height="72" width="65" /><br/>
+  Metablog is run by Chris Capel, a.k.a. pdf23ds.</a></li></ul>
+
+  
+  <li class="pagenav"><h2>Umm...stuff</h2><ul><li class="page_item page-item-3"><a href="../../chriss-webspace/index.html" title="Introduction">Introduction</a></li>
+<li class="page_item page-item-180 current_page_ancestor current_page_parent"><a href="../index.html" title="Software">Software</a>
+<ul>
+	<li class="page_item page-item-162"><a href="../blocks-game/index.html" title="Blocks game">Blocks game</a></li>
+	<li class="page_item page-item-50 current_page_item"><a href="index.html" title="Chris&#8217;s dynamic compressor">Chris&#8217;s dynamic compressor</a>
+	<ul>
+		<li class="page_item page-item-288"><a href="options-explained/index.html" title="Options explained">Options explained</a></li>
+		<li class="page_item page-item-279"><a href="rationale/index.html" title="Rationale">Rationale</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-94"><a href="../lojgloss/index.html" title="LojGloss (la tavycpi)">LojGloss (la tavycpi)</a></li>
+	<li class="page_item page-item-217"><a href="../source-code/index.html" title="Source code">Source code</a></li>
+</ul>
+</li>
+<li class="page_item page-item-19"><a href="../../what-is-debate-modeling/index.html" title="What is debate modeling?">What is debate modeling?</a></li>
+<li class="page_item page-item-87"><a href="../../implications-and-debate/index.html" title="Why and how to debate charitably">Why and how to debate charitably</a></li>
+</ul></li>
+  <h2>Archives</h2>
+    <ul>
+      	<li><a href='../../2011/04/index.html' title='April 2011'>April 2011</a></li>
+	<li><a href='../../2011/03/index.html' title='March 2011'>March 2011</a></li>
+	<li><a href='../../2011/01/index.html' title='January 2011'>January 2011</a></li>
+	<li><a href='../../2010/12/index.html' title='December 2010'>December 2010</a></li>
+	<li><a href='../../2010/10/index.html' title='October 2010'>October 2010</a></li>
+	<li><a href='../../2010/09/index.html' title='September 2010'>September 2010</a></li>
+	<li><a href='../../2010/04/index.html' title='April 2010'>April 2010</a></li>
+	<li><a href='../../2010/01/index.html' title='January 2010'>January 2010</a></li>
+	<li><a href='../../2009/10/index.html' title='October 2009'>October 2009</a></li>
+	<li><a href='../../2009/09/index.html' title='September 2009'>September 2009</a></li>
+	<li><a href='../../2009/08/index.html' title='August 2009'>August 2009</a></li>
+	<li><a href='../../2009/05/index.html' title='May 2009'>May 2009</a></li>
+	<li><a href='../../2009/04/index.html' title='April 2009'>April 2009</a></li>
+	<li><a href='../../2009/03/index.html' title='March 2009'>March 2009</a></li>
+	<li><a href='../../2009/02/index.html' title='February 2009'>February 2009</a></li>
+	<li><a href='../../2009/01/index.html' title='January 2009'>January 2009</a></li>
+	<li><a href='../../2008/11/index.html' title='November 2008'>November 2008</a></li>
+	<li><a href='../../2008/10/index.html' title='October 2008'>October 2008</a></li>
+	<li><a href='../../2008/08/index.html' title='August 2008'>August 2008</a></li>
+	<li><a href='../../2008/06/index.html' title='June 2008'>June 2008</a></li>
+	<li><a href='../../2008/05/index.html' title='May 2008'>May 2008</a></li>
+	<li><a href='../../2008/03/index.html' title='March 2008'>March 2008</a></li>
+	<li><a href='../../2008/02/index.html' title='February 2008'>February 2008</a></li>
+	<li><a href='../../2008/01/index.html' title='January 2008'>January 2008</a></li>
+	<li><a href='../../2007/12/index.html' title='December 2007'>December 2007</a></li>
+	<li><a href='../../2007/11/index.html' title='November 2007'>November 2007</a></li>
+	<li><a href='../../2007/10/index.html' title='October 2007'>October 2007</a></li>
+	<li><a href='../../2007/09/index.html' title='September 2007'>September 2007</a></li>
+	<li><a href='../../2007/08/index.html' title='August 2007'>August 2007</a></li>
+	<li><a href='../../2007/07/index.html' title='July 2007'>July 2007</a></li>
+	<li><a href='../../2007/06/index.html' title='June 2007'>June 2007</a></li>
+	<li><a href='../../2007/04/index.html' title='April 2007'>April 2007</a></li>
+	<li><a href='../../2007/02/index.html' title='February 2007'>February 2007</a></li>
+	<li><a href='../../2007/01/index.html' title='January 2007'>January 2007</a></li>
+	<li><a href='../../2006/12/index.html' title='December 2006'>December 2006</a></li>
+	<li><a href='../../2006/11/index.html' title='November 2006'>November 2006</a></li>
+	<li><a href='../../2006/08/index.html' title='August 2006'>August 2006</a></li>
+	<li><a href='../../2006/07/index.html' title='July 2006'>July 2006</a></li>
+	<li><a href='../../2006/06/index.html' title='June 2006'>June 2006</a></li>
+	<li><a href='../../2006/05/index.html' title='May 2006'>May 2006</a></li>
+	<li><a href='../../2006/04/index.html' title='April 2006'>April 2006</a></li>
+	<li><a href='../../2006/03/index.html' title='March 2006'>March 2006</a></li>
+	<li><a href='../../2006/02/index.html' title='February 2006'>February 2006</a></li>
+	<li><a href='../../2005/12/index.html' title='December 2005'>December 2005</a></li>
+	<li><a href='../../2005/11/index.html' title='November 2005'>November 2005</a></li>
+	<li><a href='../../2005/10/index.html' title='October 2005'>October 2005</a></li>
+    </ul>
+
+  <h2>Categories</h2>
+    <ul>
+      	<li class="cat-item cat-item-18"><a href="../../category/cognitive-philsci/adhd/index.html" title="View all posts filed under ADHD">ADHD</a> (5)
+</li>
+	<li class="cat-item cat-item-12"><a href="../../category/cognitive-philsci/index.html" title="View all posts filed under Cognitive phil/sci">Cognitive phil/sci</a> (13)
+</li>
+	<li class="cat-item cat-item-10"><a href="../../category/communication/index.html" title="View all posts filed under Communication">Communication</a> (22)
+</li>
+	<li class="cat-item cat-item-19"><a href="../../category/dating/index.html" title="View all posts filed under Dating">Dating</a> (6)
+</li>
+	<li class="cat-item cat-item-21"><a href="../../category/cognitive-philsci/depression/index.html" title="View all posts filed under Depression">Depression</a> (13)
+</li>
+	<li class="cat-item cat-item-8"><a href="../../category/feminism/index.html" title="View all posts filed under Feminism">Feminism</a> (4)
+</li>
+	<li class="cat-item cat-item-4"><a href="../../category/human-nature/index.html" title="View all posts filed under Human nature">Human nature</a> (47)
+</li>
+	<li class="cat-item cat-item-23"><a href="../../category/if-i-were-world-president/index.html" title="View all posts filed under If I were world president">If I were world president</a> (1)
+</li>
+	<li class="cat-item cat-item-14"><a href="../../category/linguistics/index.html" title="View all posts filed under Linguistics">Linguistics</a> (11)
+</li>
+	<li class="cat-item cat-item-15"><a href="../../category/lojban/index.html" title="View all posts filed under Lojban">Lojban</a> (5)
+</li>
+	<li class="cat-item cat-item-25"><a href="../../category/math/index.html" title="View all posts filed under Math">Math</a> (4)
+</li>
+	<li class="cat-item cat-item-7"><a href="../../category/metablogosphere/index.html" title="View all posts filed under Metablogosphere">Metablogosphere</a> (30)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../category/miscellaneous/index.html" title="View all posts filed under Miscellaneous">Miscellaneous</a> (36)
+</li>
+	<li class="cat-item cat-item-17"><a href="../../category/music/index.html" title="View all posts filed under Music">Music</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../category/dating/online-dating/index.html" title="View all posts filed under Online dating">Online dating</a> (3)
+</li>
+	<li class="cat-item cat-item-5"><a href="../../category/online-forum-structure/index.html" title="Concerning the building of a new, better forum for debate on the internet.">Online forum structure</a> (11)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../category/personal-thoughts/index.html" title="Things about me, me, me.">Personal thoughts</a> (87)
+</li>
+	<li class="cat-item cat-item-13"><a href="../../category/philosophyreligion/index.html" title="View all posts filed under Philosophy/&#8203;Religion">Philosophy/&#8203;Religion</a> (6)
+</li>
+	<li class="cat-item cat-item-22"><a href="../../category/poetical-type-output/index.html" title="View all posts filed under Poetical-type output">Poetical-type output</a> (3)
+</li>
+	<li class="cat-item cat-item-11"><a href="../../category/human-nature/productivity/index.html" title="View all posts filed under Productivity">Productivity</a> (12)
+</li>
+	<li class="cat-item cat-item-2"><a href="../../category/singularity/index.html" title="View all posts filed under Singularity">Singularity</a> (6)
+</li>
+	<li class="cat-item cat-item-9"><a href="../../category/social-issues/index.html" title="View all posts filed under Social issues">Social issues</a> (31)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../category/technology/index.html" title="View all posts filed under Technology">Technology</a> (35)
+</li>
+	<li class="cat-item cat-item-16"><a href="../../category/personal-thoughts/very-personal-thoughts/index.html" title="Stuff mostly hidden from the main page &amp; rss feeds.">Very personal thoughts</a> (3)
+</li>
+    </ul>
+
+  	
+      <li id="linkcat-24" class="linkcat"><h2>Blogs I read</h2>
+	<ul>
+<li><a href="http://dneiwert.blogspot.com/">Orcinus</a></li>
+<li><a href="http://www.overcomingbias.com/" title="On correcting for human bias in truth seeking">Overcoming Bias</a></li>
+<li><a href="http://slacktivist.typepad.com/slacktivist/">slacktivist</a></li>
+<li><a href="http://unfogged.com/" title="The Mineshaft">Unfogged</a></li>
+
+	</ul>
+</li>
+  <li id="linkcat-2" class="linkcat"><h2>Singularity</h2>
+	<ul>
+<li><a href="http://www.singinst.org/GISAI/paradigms/thinking.html">How to make AI</a></li>
+<li><a href="http://singinst.org/">Singularity Institute</a></li>
+<li><a href="http://sl4.org/archive/">SL4 Archives</a></li>
+<li><a href="http://sl4.org/wiki/">SL4 Wiki</a></li>
+<li><a href="http://yudkowsky.net/singularity.html">What is the Singularity?</a></li>
+
+	</ul>
+</li>
+  
+  <h2>Meta</h2>
+    <ul>
+            <li><a href="../../wp-login.html">Log in</a></li>
+      <li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a></li>
+      <li><a href="feed:http://pdf23ds.net/feed/">Entries (RSS)</a>
+      <li><a href="feed:http://pdf23ds.net/comments/feed/">Comments (RSS)</a>
+          </ul>
+
+  <!-- 21 queries. 2.025 seconds. -->
+
+</div>
+
+
+
+<!-- Site Meter XHTML Strict 1.0 -->
+<script type="text/javascript" src="http://s41.sitemeter.com/js/counter.asp?site=s41pdf23ds">
+</script>
+<!-- Copyright (c)2006 Site Meter -->
+
+</body>
+
+<!-- Mirrored from pdf23ds.net/software/dynamic-compressor/ by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 13 Jun 2011 01:07:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>
