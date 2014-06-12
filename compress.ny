@@ -1,25 +1,31 @@
+;;Chris's Dynamic Compressor, version 1.2.7.b1
+
+;; http://pdf23ds.net/software/dynamic-compressor
+;;Copyright (c) 2010 Chris Capel
+;;Released under the MIT license. See line 77ish for details.
+
 ;nyquist plug-in
 ;version 1
 ;type process
 ;categories "http://lv2plug.in/ns/lv2core#CompressorPlugin"
 ;name "Compress &dynamics..."
 ;action "Compressing..."
-;info "Does dynamic (volume) compression with lookahead.\n'Compress ratio' is how much compression to apply. Raise when soft parts\n  are too soft, and lower to keep some dynamic range. You can soften the\n  soft parts instead of increasing them with values < 0, and invert\n  loudness with values > 1 (lower max amp when you do).\n'Hardness' is how agressively to compress. Raise when parts are still\n  hard to hear (even with a high compress ratio). Lower when the result\n  sounds distorted.\nRaise 'floor' to make quiet parts stay quiet.\nRaise 'noise gate falloff' to make quiet parts (beneath 'floor') disappear.\nLower 'maximum amplitude' if you experience clipping."
-;control compress-ratio "Compress ratio" real "" .5 -.5 1.25
+;info "Does dynamic (volume) compression with lookahead.\n'Compression level' is how much compression to apply. Raise when soft parts\n  are too soft, and lower to keep some dynamic range. You can soften the\n  soft parts instead of increasing them with values < 0, and invert\n  loudness with values > 1 (lower max amp when you do).\n'Hardness' is how agressively to compress. Raise when parts are still\n  hard to hear (even with a high compress ratio). Lower when the result\n  sounds distorted.\nRaise 'floor' to make quiet parts stay quiet.\nRaise 'noise gate falloff' to make quiet parts (beneath 'floor') disappear.\nLower 'renormalize' if you experience clipping.\nEnable 'Compress bright sounds' to adjust for the perceived loudness of\n  bright (brassy) sounds."
+;control compress-ratio "Compression level" real "" .5 -.5 1.25
 
 ;; TO ENABLE ADVANCED SETTINGS: delete one semicolon from the beginning of the next two lines, then add one to following four.
 
 ;;control left-width-s "Release speed" real "~ms" 510 1 5000
 ;;control right-width-s "Attack speed" real "~ms" 340 1 5000
 
-;control hardness "Compression hardness" real "" .5 .1 1
-(setf hardness (* (- 1.1 hardness) 3))
-(setf left-width-s (* hardness hardness 510))
-(setf right-width-s (* hardness hardness 340))
+;control hardness "Compression hardness" real "" .611 .1 1
+(setf hardness (* (- 1.2 hardness) 1.7))
+(setf left-width-s (* (expt hardness 2.5) 510))
+(setf right-width-s (* (expt hardness 2.5) 340))
 
 ;control floor "Floor" real "dB" -32 -96 0
 ;control noise-factor "Noise gate falloff" real "factor" 0 -2 10
-;control scale-max "Maximum amplitude" real "linear" .99 .0 1.0
+;control scale-max "Renormalize" real "linear" .99 .0 1.0
 
 ;; TO ENABLE ADVANCED SETTINGS: delete one semicolon from the beginning of the next two lines, then add one to following two.
 
@@ -29,11 +35,16 @@
 (setf left-exponent 2)
 (setf right-exponent 4)
 
-;;Version 1.2.6
 
-;;Authored by Chris Capel (http://pdf23ds.net)
-;;All rights reserved
-;;Permission granted for personal use, without redistribution.
+;control use-percep-high "Compress bright sounds" int "yes/no" 1 0 1
+
+;;for some reason, the results with use-percep-low are simply atrocious. don't
+;;know why. But use-percep-high is great, so whatever.
+
+;control use-percep-low "Boost bass sounds" int "yes/no" 0 0 1
+
+;(setf use-percep-low 0)
+(setf use-percep (or (= use-percep-high 1) (= use-percep-low 1)))
 
 ;;This algorithm works by enveloping the average of an incoming signal (like
 ;;all dynamic compressors, really). The envelope is constructed using sections
@@ -52,16 +63,30 @@
 ;;gain (especially on attacks, but also on release) to meet peaks.
 
 ;convert to seconds
-(setf right-width-s (/ right-width-s 1000))
-(setf left-width-s (/ left-width-s 1000))
-
-; umm, this isn't ready for prime-time
-; control use-percep "Use perceptual model" int "yes/no" 0 0 1
-(setf use-percep 0)
+(setf right-width-s (/ right-width-s 1000.0))
+(setf left-width-s (/ left-width-s 1000.0))
 
 (setf *window-size* 1500)
 
 (setf *gc-flag* nil)
+
+;;Permission is hereby granted, free of charge, to any person obtaining a copy
+;;of this software and associated documentation files (the "Software"), to deal
+;;in the Software without restriction, including without limitation the rights
+;;to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+;;copies of the Software, and to permit persons to whom the Software is
+;;furnished to do so, subject to the following conditions:
+
+;;The above copyright notice and this permission notice shall be included in
+;;all copies or substantial portions of the Software.
+
+;;THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+;;IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+;;FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+;;AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+;;LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+;;OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+;;THE SOFTWARE.
 
 ;;Compressing based on perceived loudness--perceptual model
 
@@ -79,58 +104,39 @@
 ;;amplitude.
 
 ;;http://personal.cityu.edu.hk/~bsapplec/frequenc.htm
-;;20 hz -40 db
-;;30 hz -30 db
-;;50 hz -20
-;;80 hz -10
-;;120 hz -5
-;;200 hz 0
-;;300 hz +4
-;;450 hz +5
-;;600 hz +4
-;;800 hz +2
-;;1300 hz 0
-;;2000 hz +3
-;;3000 hz +7
-;;4000 hz +9
-;;6000 hz +1
-;;8500 hz -7
-;;12000 hz 0
-;;14000 hz +4
-;;16000 hz -3
-;;20000 hz -30
+(setf bands
+'((20    -20)
+  (50    -20)
+  (80    -10)
+  (120    -5)
+  (200     0)
+  (300    +4)
+  (450    +5)
+  (600    +4)
+  (800    +2)
+  (1300    0)
+  (2000   +3)
+  (3000   +7)
+  (4000   +9)
+  (6000   +1)
+  (8500   -7)
+  (12000   0)
+  (14000  +4)
+  (16000  -3)
+  (20000 -20)))
 
-;;this EQ setting can probably be improved on a lot
-
-;;20 -40
-;;40 -23
-;;80 -10
-;;160 -4
-;;320 +3
-;;640 +2
-;;1280 0
-;;2560 +4
-;;5120 +9
-;;10240 -7
-;;20480 -20
-
-;;
-
+;(setf eq-adjust -20.0)
 (defun get-percep-adjusted-sound (sound)
-  (let ((bands '((20 -40)
-                 (40 -23)
-                 (80 -10)
-                 (160 -4)
-                 (320 +3)
-                 (640 +2)
-                 (1280 0)
-                 (2560 +4)
-                 (5120 +9)
-                 (10240 -7)
-                 (20480 -20))))
-    (dolist (band bands)
-      (setf sound (eq-band sound (car band) (cadr band) 1)))
-    sound))
+  (when (= use-percep-high 1)
+	 (setf sound (eq-band sound 6000 25 1.5))
+	 (setf sound (eq-band sound 1600 3 .5))
+	 (setf sound (eq-band sound 4300 3 .5))
+	 )
+  (when (= use-percep-low 1)
+    ;;why does this suck so bad?
+  	 (setf sound (eq-band sound 50 -15 2))
+	 (setf sound (mult sound (db-to-linear 15))))
+  sound)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Work with sound arrays
@@ -430,7 +436,7 @@
 
 (defun get-my-sound (sound)
   "take care of averaging and multichannel bookkeeping"
-  (let ((sound (if (= use-percep 1) (get-percep-adjusted-sound sound) sound))
+  (let ((sound (if use-percep (get-percep-adjusted-sound sound) sound))
         (avg-fun (lambda (snd) (snd-avg snd (* 2 *window-size*) *window-size* op-peak))))
     (if (arrayp sound)
         (let ((avg-channels (make-array (length sound))))
@@ -445,7 +451,6 @@
          (srate (my-snd-srate ret)))
     (setf right-width (* right-width-s srate))
     (setf  left-width (*  left-width-s srate))
-
     ;;get-compression-env applies linear-to-db(max(abs(s))) to its input
     (setf ret (get-compression-env ret))
     (setf ret (mult compress-ratio ret))
@@ -453,7 +458,11 @@
     (setf ret (recip ret))
     (setf ret (mult scale-max ret))
     ;(snd-length ret 10000000000)
-    (mult s ret)
+    ;(if use-percep
+    ;  (mult s ret (db-to-linear eq-adjust) ;constant
+    ;        (get-my-sound (get-percep-adjusted-sound s)))
+      (mult s ret)
+		;)
     ))
 
 (defun prin (&rest args)
@@ -464,3 +473,10 @@
 
 ;(setf debug (open "C:\\debug.txt" :direction :output))
 (do-compression)
+
+;(let* ((a (get-my-sound s))
+;       (b (get-my-sound (get-percep-adjusted-sound s))))
+  ;b)
+  ;(mult (get-percep-adjusted-sound s) (db-to-linear eq-adjust)))
+  ;(mult (recip b) .01))
+  ;(recip (mult a (recip b))))
